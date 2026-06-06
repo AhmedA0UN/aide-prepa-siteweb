@@ -1,0 +1,6 @@
+[
+  {"id":1, "code":"pc", "nom":"PC", "description":"Physique-Chimie"},
+  {"id":2, "code":"pt", "nom":"PT", "description":"Physique-Technologie"},
+  {"id":3, "code":"mp", "nom":"MP", "description":"Mathématiques-Physique"},
+  {"id":4, "code":"bg", "nom":"BG", "description":"Biologie-Géologie"}
+]

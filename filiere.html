@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Filières</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Aide Prépa</a>
+   <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li> 
+        <!--
+        <li class="nav-item"><a class="nav-link" href="cours.html">Cours</a></li>
+        <li class="nav-item"><a class="nav-link" href="filiere.html">Filière</a></li>
+        <li class="nav-item"><a class="nav-link" href="tds.html">TDs</a></li>
+        <li class="nav-item"><a class="nav-link" href="examens.html">Examens</a></li> -->
+      </ul>
+    </div> 
+  </div>
+</nav>
+<main class="container py-5">
+  <div id="content">
+    <h1>Filières</h1>
+    <p>Choisissez une filière pour voir les cours, TDs et examens associés :</p>
+    <div id="filiereList" class="list-group" aria-live="polite"></div>
+  </div>
+</main>
+<script>
+function qs(param) {
+  const url = new URL(window.location.href);
+  return url.searchParams.get(param);
+}
+
+document.addEventListener('DOMContentLoaded', async ()=>{
+  const content = document.getElementById('content');
+  const filiereList = document.getElementById('filiereList');
+  let filieres = [];
+  try {
+    const res = await fetch('data/filieres.json');
+    filieres = await res.json();
+  } catch(e) {
+    filieres = [];
+  }
+
+  const code = qs('code');
+  if (!code) {
+    // render list
+    filieres.forEach(f=>{
+      const a = document.createElement('a');
+      a.className = 'list-group-item list-group-item-action';
+      a.href = `filiere.html?code=${encodeURIComponent(f.code)}`;
+      a.textContent = `${f.nom} — ${f.description}`;
+      filiereList.appendChild(a);
+    });
+    if (filieres.length===0) filiereList.textContent = 'Aucune filière disponible.';
+  } else {
+    // render filiere landing with links to sections
+    const f = filieres.find(x=>x.code===code) || {nom: code.toUpperCase(), description: ''};
+    content.innerHTML = `\n      <p><a href="filiere.html" class="btn btn-sm btn-outline-secondary">← Retour aux filières</a></p>\n      <h1>Filière ${f.nom}</h1>\n      <p>${f.description}</p>\n      <div class="row mt-4">\n        <div class="col-md-4">\n          <a class="btn btn-primary w-100" href="cours.html?f=${encodeURIComponent(code)}">Cours</a>\n        </div>\n        <div class="col-md-4">\n          <a class="btn btn-success w-100" href="tds.html?f=${encodeURIComponent(code)}">TDs</a>\n        </div>\n        <div class="col-md-4">\n          <a class="btn btn-outline-primary w-100" href="examens.html?f=${encodeURIComponent(code)}">Examens</a>\n        </div>\n      </div>\n    `;
+  }
+});
+</script>
+<footer class="bg-light py-3">
+  <div class="container text-center">© 2026 Aide Prépa</div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
