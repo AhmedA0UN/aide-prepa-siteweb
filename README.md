@@ -9,7 +9,7 @@ Pour lancer localement :
 
 ```bash
 # avec Python 3 (serveur simple)
-cd "c:\Users\Mega-PC\Documents\vs projets\GIT\aide-prepa-siteweb"
+cd "c:\aide-prepa-siteweb"
 python -m http.server 8000
 # puis ouvrir http://localhost:8000
 ```
