@@ -11,7 +11,10 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container">
     <a class="navbar-brand" href="index.html">Aide Prépa</a>
-   <div class="collapse navbar-collapse" id="navMain">
+    <div class="collapse navbar-collapse" id="navMain">
+      <form class="d-flex me-3" role="search" action="search.html" method="get">
+        <input class="form-control form-control-sm" type="search" placeholder="Rechercher" aria-label="Search" name="q">
+      </form>
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li> 
         <!--
@@ -26,7 +29,8 @@
 <main class="container py-5">
   <div id="content">
     <h1>Filières</h1>
-    <p>Choisissez une filière pour voir les cours, TDs et examens associés :</p>
+    <p>Suivez la séquence : Choix de type → Filière → Année / Spécialité.</p>
+    <div id="step" class="mb-3"></div>
     <div id="filiereList" class="list-group" aria-live="polite"></div>
   </div>
 </main>
@@ -39,6 +43,7 @@ function qs(param) {
 document.addEventListener('DOMContentLoaded', async ()=>{
   const content = document.getElementById('content');
   const filiereList = document.getElementById('filiereList');
+  const step = document.getElementById('step');
   let filieres = [];
   try {
     const res = await fetch('../data/filieres.json');
@@ -47,22 +52,49 @@ document.addEventListener('DOMContentLoaded', async ()=>{
     filieres = [];
   }
 
+  const type = qs('type');
   const code = qs('code');
-  if (!code) {
-    // render list
+
+  if (!type) {
+    step.innerHTML = `
+      <div class="d-flex gap-2">
+        <a class="btn btn-primary" href="filiere.html?type=classique">Prépa Classique</a>
+        <a class="btn btn-outline-primary" href="filiere.html?type=integre">Prépa Intégrée</a>
+      </div>
+    `;
+    filiereList.textContent = 'Choisissez un type ci-dessus.';
+    return;
+  }
+
+  if (type === 'classique' && !code) {
+    step.innerHTML = `<p>Type: <strong>Prépa Classique</strong> — Choisissez une filière :</p>`;
     filieres.forEach(f=>{
       const a = document.createElement('a');
       a.className = 'list-group-item list-group-item-action';
-      a.href = `filiere.html?code=${encodeURIComponent(f.code)}`;
+      a.href = `classique/${encodeURIComponent(f.code)}/index.html`;
       a.textContent = `${f.nom} — ${f.description}`;
       filiereList.appendChild(a);
     });
     if (filieres.length===0) filiereList.textContent = 'Aucune filière disponible.';
-  } else {
-    // render filiere landing with links to sections
-    const f = filieres.find(x=>x.code===code) || {nom: code.toUpperCase(), description: ''};
-    content.innerHTML = `\n      <p><a href="filiere.html" class="btn btn-sm btn-outline-secondary">← Retour aux filières</a></p>\n      <h1>Filière ${f.nom}</h1>\n      <p>${f.description}</p>\n      <div class="row mt-4">\n        <div class="col-md-4">\n          <a class="btn btn-primary w-100" href="cours.html?f=${encodeURIComponent(code)}">Cours</a>\n        </div>\n        <div class="col-md-4">\n          <a class="btn btn-success w-100" href="tds.html?f=${encodeURIComponent(code)}">TDs</a>\n        </div>\n        <div class="col-md-4">\n          <a class="btn btn-outline-primary w-100" href="examens.html?f=${encodeURIComponent(code)}">Examens</a>\n        </div>\n      </div>\n    `;
+    return;
   }
+
+  if (type === 'integre' && !code) {
+    step.innerHTML = `<p>Type: <strong>Prépa Intégrée</strong> — Choisissez :</p>`;
+    const a1 = document.createElement('a');
+    a1.className = 'list-group-item list-group-item-action';
+    a1.href = 'integre/cpi1/index.html';
+    a1.textContent = 'CPI1 — Cycle intégré 1';
+    filiereList.appendChild(a1);
+    const a2 = document.createElement('a');
+    a2.className = 'list-group-item list-group-item-action';
+    a2.href = 'integre/cpi2/index.html';
+    a2.textContent = 'CPI2 — Cycle intégré 2';
+    filiereList.appendChild(a2);
+    return;
+  }
+
+  filiereList.textContent = 'Sélection introuvable.';
 });
 </script>
 <footer class="bg-light py-3">

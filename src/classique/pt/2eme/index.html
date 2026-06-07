@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PT 2ème</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+</head>
+<body>
+<nav class="navbar navbar-dark bg-primary">
+  <div class="container">
+    <a class="navbar-brand" href="../../../filiere.html">Aide Prépa</a>
+  </div>
+</nav>
+<main class="container py-5">
+  <h1>PT — 2ème</h1>
+  <p>Contenu spécifique pour PT 2ème.</p>
+  <div class="mb-3">
+    <a class="btn btn-primary" href="../../../cours.html?type=classique&f=pt&year=2eme">Voir tous les cours</a>
+    <a class="btn btn-outline-primary" href="../../../tds.html?type=classique&f=pt&year=2eme">Voir tous les TDs</a>
+    <a class="btn btn-outline-secondary" href="../../../examens.html?type=classique&f=pt&year=2eme">Voir tous les examens</a>
+  </div>
+  <h3>Cours</h3>
+  <div id="coursList" class="list-group mb-3">Chargement…</div>
+  <h3>TDs</h3>
+  <div id="tdsList" class="list-group mb-3">Chargement…</div>
+  <h3>Examens</h3>
+  <div id="examList" class="list-group mb-3">Chargement…</div>
+</main>
+<script>
+;(async function(){
+  try{
+    const res = await fetch('../../../../data/contents.json');
+    const all = await res.json();
+    const node = (all.classique && all.classique.pt && all.classique.pt['2eme']) || {};
+    const render = (arr, el) => {
+      const container = document.getElementById(el);
+      container.innerHTML = '';
+      if (!arr || arr.length===0) return container.textContent = 'Aucun élément.';
+      arr.forEach(i=>{
+        const a = document.createElement('a');
+        a.className = 'list-group-item list-group-item-action';
+        a.textContent = i.titre || i.id;
+        if (i.fichier) a.href = `../../../../data/${i.fichier}`;
+        container.appendChild(a);
+      });
+    };
+    render(node.cours, 'coursList');
+    render(node.tds, 'tdsList');
+    render(node.examens, 'examList');
+  }catch(e){
+    document.getElementById('coursList').textContent = 'Erreur';
+    document.getElementById('tdsList').textContent = 'Erreur';
+    document.getElementById('examList').textContent = 'Erreur';
+  }
+})();
+</script>
+<footer class="bg-light py-3 text-center">© 2026 Aide Prépa</footer>
+</body>
+</html>

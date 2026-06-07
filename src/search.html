@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Recherche</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Aide Prépa</a>
+    <div class="collapse navbar-collapse" id="navMain">
+      <form class="d-flex me-3" role="search" action="search.html" method="get">
+        <input class="form-control form-control-sm" type="search" placeholder="Rechercher" aria-label="Search" name="q">
+      </form>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+        <li class="nav-item"><a class="nav-link" href="filiere.html">Filière</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<main class="container py-5">
+  <h1>Recherche</h1>
+  <p id="subtitle">Résultats pour : <strong id="queryText"></strong></p>
+  <div id="results" class="list-group"></div>
+</main>
+<footer class="bg-light py-3">
+  <div class="container text-center">© 2026 Aide Prépa</div>
+</footer>
+<script>
+(async function(){
+  const params = new URL(window.location.href).searchParams;
+  const q = (params.get('q')||'').trim();
+  document.getElementById('queryText').textContent = q || '(vide)';
+  if (!q) return;
+  try {
+    const res = await fetch('../data/contents.json');
+    const all = await res.json();
+    const results = [];
+    function scan(path, obj) {
+      if (!obj) return;
+      if (Array.isArray(obj)) {
+        obj.forEach(item=>{
+          const title = (item.titre||'').toLowerCase();
+          if (title.includes(q.toLowerCase())) results.push({title:item.titre, file:item.fichier, path});
+        });
+      } else if (typeof obj === 'object') {
+        Object.keys(obj).forEach(k=> scan(path ? path + '/' + k : k, obj[k]));
+      }
+    }
+    scan('', all);
+    const container = document.getElementById('results');
+    if (results.length===0) { container.textContent = 'Aucun résultat.'; return; }
+    results.forEach(r=>{
+      const a = document.createElement('a');
+      a.className = 'list-group-item list-group-item-action';
+      a.textContent = `${r.title} — ${r.path}`;
+      if (r.file) a.href = `../data/${r.file}`;
+      container.appendChild(a);
+    });
+  } catch(e) {
+    document.getElementById('results').textContent = 'Erreur lors de la recherche.';
+  }
+})();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

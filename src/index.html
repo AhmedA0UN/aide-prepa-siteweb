@@ -10,11 +10,14 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container">
-    <a class="navbar-brand" href="#">Aide Prépa</a>
+    <a class="navbar-brand" href="index.html">Aide Prépa</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navMain">
+      <form class="d-flex me-3" role="search" action="search.html" method="get">
+        <input class="form-control form-control-sm" type="search" placeholder="Rechercher" aria-label="Search" name="q">
+      </form>
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
         <li class="nav-item"><a class="nav-link" href="filiere.html">Filière</a></li>
@@ -27,8 +30,8 @@
     <h1 class="display-5">Bienvenue sur Aide Prépa</h1>
     <p class="lead">Ressources pédagogiques : Cours, Travaux dirigés, Examens et plus.</p>
     <p>
-      <a href="cours.html" class="btn btn-primary">Voir les cours</a>
-      <a href="tds.html" class="btn btn-outline-primary">Voir les TDs</a>
+      <a href="filiere.html" class="btn btn-primary">Choisir une filière</a>
+      <a href="" class="btn btn-outline-primary"></a>
     </p>
   </div>
 </header>
@@ -44,7 +47,7 @@
           <div class="card-body">
             <h5 class="card-title">Cours</h5>
             <p class="card-text">Notes de cours structurées par matière et thème.</p>
-            <a href="cours.html" class="btn btn-sm btn-primary">Explorer</a>
+            <a href="filiere.html?type=classique" class="btn btn-sm btn-primary">Explorer</a>
           </div>
         </div>
       </div>
@@ -53,7 +56,7 @@
           <div class="card-body">
             <h5 class="card-title">TDs</h5>
             <p class="card-text">Exercices guidés et corrigés.</p>
-            <a href="tds.html" class="btn btn-sm btn-primary">Explorer</a>
+            <a href="filiere.html?type=classique" class="btn btn-sm btn-primary">Explorer</a>
           </div>
         </div>
       </div>
@@ -62,7 +65,7 @@
           <div class="card-body">
             <h5 class="card-title">Examens</h5>
             <p class="card-text">Sujets d'annales et corrigés.</p>
-            <a href="examens.html" class="btn btn-sm btn-primary">Explorer</a>
+            <a href="filiere.html?type=classique" class="btn btn-sm btn-primary">Explorer</a>
           </div>
         </div>
       </div>
@@ -72,7 +75,6 @@
 <footer class="bg-light py-3">
   <div class="container text-center">© 2026 Aide Prépa</div>
 </footer>
-</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/js/main.js"></script>
 </body>
