@@ -67,13 +67,13 @@
 						{
 							code: 'mi',
 							title: 'MI',
-							label: 'Mathématiques - Informatique',
+							label: 'Mathématiques - Informatique (Computer Science)',
 							summary: 'Travail approfondi en algorithmique, structure de données et modélisation.'
 						},
 						{
 							code: 'pi',
 							title: 'PI',
-							label: 'Physique - Ingénierie',
+							label: 'Physique - Informatique (Computer Engineering)',
 							summary: 'Une branche tournée vers la physique appliquée, les systèmes et l’expérimentation.'
 						}
 					]
