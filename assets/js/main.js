@@ -123,15 +123,15 @@
 
 	function shellHeader(active) {
 		const navItems = [
-			{ label: 'Accueil', href: '/src/index.html', key: 'home' },
-			{ label: 'Filières', href: '/src/filiere.html', key: 'filiere' },
-			{ label: 'Recherche', href: '/src/search.html', key: 'search' }
+			{ label: 'Accueil', href: 'src/index.html', key: 'home' },
+			{ label: 'Filières', href: 'src/filiere.html', key: 'filiere' },
+			{ label: 'Recherche', href: 'src/search.html', key: 'search' }
 		];
 
 		return `
 			<nav class="navbar navbar-expand-lg">
 				<div class="container">
-					<a class="brand-mark" href="/src/index.html" aria-label="Aide Prépa accueil">
+					<a class="brand-mark" href="src/index.html" aria-label="Aide Prépa accueil">
 						<span class="brand-mark-badge">AP</span>
 						<span class="brand-copy">
 							<span>${SITE.brand}</span>
@@ -143,7 +143,7 @@
 					</button>
 					<div class="collapse navbar-collapse" id="siteNav">
 						<div class="ms-lg-auto top-actions">
-							<form class="search-inline" action="/src/search.html" method="get" role="search">
+							<form class="search-inline" action="src/search.html" method="get" role="search">
 								<input class="form-control" type="search" name="q" placeholder="Rechercher une ressource" aria-label="Rechercher">
 							</form>
 							<ul class="navbar-nav nav-pills gap-2">
@@ -344,8 +344,8 @@
 	}
 
 	function renderHome() {
-		const cards = SITE.sections.classique.map((track) => renderTrackPreview(track, `/src/classique/${track.code}/index.html`)).join('');
-		const integratedCards = SITE.sections.integre.map((track) => renderTrackPreview(track, `/src/integre/${track.code}/index.html`)).join('');
+		const cards = SITE.sections.classique.map((track) => renderTrackPreview(track, `src/classique/${track.code}/index.html`)).join('');
+		const integratedCards = SITE.sections.integre.map((track) => renderTrackPreview(track, `src/integre/${track.code}/index.html`)).join('');
 
 		return `
 			<div class="page-shell">
@@ -356,8 +356,8 @@
 							<h1>Une structure claire pour réviser vite, bien et sans dispersion.</h1>
 							<p class="hero-lead">Aide Prépa rassemble les cours, les travaux dirigés et les examens dans un parcours lisible, pensé pour avancer par filière, par année et par type de ressource.</p>
 							<div class="hero-actions">
-								<a class="btn btn-lg btn-light" href="/src/filiere.html">Choisir une filière</a>
-								<a class="btn btn-lg btn-outline-light" href="/src/search.html">Rechercher un contenu</a>
+								<a class="btn btn-lg btn-light" href="src/filiere.html">Choisir une filière</a>
+								<a class="btn btn-lg btn-outline-light" href="src/search.html">Rechercher un contenu</a>
 							</div>
 							<div class="pill-row">
 								<span class="pill pill--accent">Cours</span>
@@ -440,7 +440,7 @@
 								<span class="pill ${resource.key === 'cours' ? 'pill--accent' : resource.key === 'examens' ? 'pill--warm' : ''}">${resource.label}</span>
 								<h3>${resource.title}</h3>
 								<p>${resource.summary}</p>
-								<a class="btn btn-sm btn-outline-light" href="/src/filiere.html">Explorer</a>
+								<a class="btn btn-sm btn-outline-light" href="src/filiere.html">Explorer</a>
 							</article>
 						`).join('')}
 					</div>
@@ -469,8 +469,8 @@
 					<h1>Organisez votre parcours en deux étapes.</h1>
 					<p class="hero-lead">${intro}</p>
 					<div class="hero-actions">
-						<a class="btn btn-light btn-lg" href="/src/filiere.html?type=classique">Prépa classique</a>
-						<a class="btn btn-outline-light btn-lg" href="/src/filiere.html?type=integre">Prépa intégrée</a>
+						<a class="btn btn-light btn-lg" href="src/filiere.html?type=classique">Prépa classique</a>
+						<a class="btn btn-outline-light btn-lg" href="src/filiere.html?type=integre">Prépa intégrée</a>
 					</div>
 				</section>
 				<section class="section-block fade-in delay-1">
@@ -514,7 +514,7 @@
 					<p class="eyebrow">Recherche</p>
 					<h1>Retrouvez une page en quelques secondes.</h1>
 					<p class="hero-lead">La recherche parcourt l’ensemble du plan du site pour vous renvoyer vers le bon parcours, la bonne année ou le bon type de ressource.</p>
-					<form class="search-inline hero-actions" action="/src/search.html" method="get">
+					<form class="search-inline hero-actions" action="src/search.html" method="get">
 						<input class="form-control form-control-lg" type="search" name="q" value="${escapeHtml(query)}" placeholder="Ex. MP 2ème examens, CPI2 mi, BG 1ere cours" aria-label="Rechercher">
 						<button class="btn btn-lg btn-light" type="submit">Rechercher</button>
 					</form>
@@ -571,9 +571,9 @@
 				<h3>${YEAR_LABELS[year]}</h3>
 				<p>${track.label} - accès direct aux cours, aux TDs et aux examens de ${YEAR_LABELS[year].toLowerCase()}.</p>
 				<div class="hero-actions">
-					<a class="btn btn-sm btn-light" href="/src/classique/${track.code}/${year}/index.html">Ouvrir l’année</a>
-					<a class="btn btn-sm btn-outline-light" href="/src/classique/${track.code}/${year}/cours.html">Cours</a>
-					<a class="btn btn-sm btn-outline-light" href="/src/classique/${track.code}/${year}/tds.html">TDs</a>
+					<a class="btn btn-sm btn-light" href="src/classique/${track.code}/${year}/index.html">Ouvrir l’année</a>
+					<a class="btn btn-sm btn-outline-light" href="src/classique/${track.code}/${year}/cours.html">Cours</a>
+					<a class="btn btn-sm btn-outline-light" href="src/classique/${track.code}/${year}/tds.html">TDs</a>
 				</div>
 			</article>
 		`).join('');
@@ -582,16 +582,16 @@
 			<div class="page-shell">
 				<section class="page-hero fade-in">
 					<div class="breadcrumb">
-						<a href="/src/index.html">Accueil</a><span class="breadcrumb-sep">/</span>
-						<a href="/src/filiere.html?type=classique">Prépa classique</a><span class="breadcrumb-sep">/</span>
+						<a href="src/index.html">Accueil</a><span class="breadcrumb-sep">/</span>
+						<a href="src/filiere.html?type=classique">Prépa classique</a><span class="breadcrumb-sep">/</span>
 						<span>${track.title}</span>
 					</div>
 					<p class="eyebrow">Prépa classique</p>
 					<h1>${track.title} - ${track.label}</h1>
 					<p class="hero-lead">${track.summary}</p>
 					<div class="hero-actions">
-						<a class="btn btn-light btn-lg" href="/src/classique/${track.code}/1ere/index.html">Commencer en 1ère année</a>
-						<a class="btn btn-outline-light btn-lg" href="/src/classique/${track.code}/2eme/index.html">Aller en 2ème année</a>
+						<a class="btn btn-light btn-lg" href="src/classique/${track.code}/1ere/index.html">Commencer en 1ère année</a>
+						<a class="btn btn-outline-light btn-lg" href="src/classique/${track.code}/2eme/index.html">Aller en 2ème année</a>
 					</div>
 					<div class="pill-row">${track.topics.map((topic) => `<span class="pill">${escapeHtml(topic)}</span>`).join('')}</div>
 				</section>
@@ -618,10 +618,10 @@
 				<p>${branch.summary}</p>
 				<div class="hero-actions">
 					${track.code === 'cpi2'
-						? `<a class="btn btn-sm btn-light" href="/src/integre/${track.code}/${branch.code}/index.html">Ouvrir la branche</a>`
-						: `<a class="btn btn-sm btn-light" href="/src/integre/${track.code}/${branch.code}/cours.html">Cours</a>`}
-					<a class="btn btn-sm btn-outline-light" href="/src/integre/${track.code}/${branch.code}/cours.html">Cours</a>
-					<a class="btn btn-sm btn-outline-light" href="/src/integre/${track.code}/${branch.code}/tds.html">TDs</a>
+						? `<a class="btn btn-sm btn-light" href="src/integre/${track.code}/${branch.code}/index.html">Ouvrir la branche</a>`
+						: `<a class="btn btn-sm btn-light" href="src/integre/${track.code}/${branch.code}/cours.html">Cours</a>`}
+					<a class="btn btn-sm btn-outline-light" href="src/integre/${track.code}/${branch.code}/cours.html">Cours</a>
+					<a class="btn btn-sm btn-outline-light" href="src/integre/${track.code}/${branch.code}/tds.html">TDs</a>
 				</div>
 			</article>
 		`).join('');
@@ -630,8 +630,8 @@
 			<div class="page-shell">
 				<section class="page-hero fade-in">
 					<div class="breadcrumb">
-						<a href="/src/index.html">Accueil</a><span class="breadcrumb-sep">/</span>
-						<a href="/src/filiere.html?type=integre">Prépa intégrée</a><span class="breadcrumb-sep">/</span>
+						<a href="src/index.html">Accueil</a><span class="breadcrumb-sep">/</span>
+						<a href="src/filiere.html?type=integre">Prépa intégrée</a><span class="breadcrumb-sep">/</span>
 						<span>${track.title}</span>
 					</div>
 					<p class="eyebrow">Prépa intégrée</p>
@@ -668,7 +668,7 @@
 				<span class="pill ${route.track.accent}">${resource.label}</span>
 				<h3>${resource.title}</h3>
 				<p>${resource.summary}</p>
-				<a class="btn btn-sm btn-light" href="/src/integre/${route.track.code}/${branch.code}/${resource.key}.html">Ouvrir ${resource.title.toLowerCase()}</a>
+				<a class="btn btn-sm btn-light" href="src/integre/${route.track.code}/${branch.code}/${resource.key}.html">Ouvrir ${resource.title.toLowerCase()}</a>
 			</article>
 		`).join('');
 
@@ -676,9 +676,9 @@
 			<div class="page-shell">
 				<section class="page-hero fade-in">
 					<div class="breadcrumb">
-						<a href="/src/index.html">Accueil</a><span class="breadcrumb-sep">/</span>
-						<a href="/src/filiere.html?type=integre">Prépa intégrée</a><span class="breadcrumb-sep">/</span>
-						<a href="/src/integre/${route.track.code}/index.html">${route.track.title}</a><span class="breadcrumb-sep">/</span>
+						<a href="src/index.html">Accueil</a><span class="breadcrumb-sep">/</span>
+						<a href="src/filiere.html?type=integre">Prépa intégrée</a><span class="breadcrumb-sep">/</span>
+						<a href="src/integre/${route.track.code}/index.html">${route.track.title}</a><span class="breadcrumb-sep">/</span>
 						<span>${branch.title}</span>
 					</div>
 					<p class="eyebrow">Branche ${route.track.title}</p>
@@ -708,7 +708,7 @@
 				<span class="pill ${route.track.accent}">${resource.label}</span>
 				<h3>${resource.title}</h3>
 				<p>${resource.summary}</p>
-				<a class="btn btn-sm btn-light" href="/src/classique/${route.track.code}/${route.year}/${resource.key}.html">Ouvrir ${resource.title.toLowerCase()}</a>
+				<a class="btn btn-sm btn-light" href="src/classique/${route.track.code}/${route.year}/${resource.key}.html">Ouvrir ${resource.title.toLowerCase()}</a>
 			</article>
 		`).join('');
 
@@ -718,23 +718,23 @@
 			<div class="page-shell">
 				<section class="page-hero fade-in">
 					<div class="breadcrumb">
-						<a href="/src/index.html">Accueil</a><span class="breadcrumb-sep">/</span>
-						<a href="/src/filiere.html?type=classique">Prépa classique</a><span class="breadcrumb-sep">/</span>
-						<a href="/src/classique/${route.track.code}/index.html">${route.track.title}</a><span class="breadcrumb-sep">/</span>
+						<a href="src/index.html">Accueil</a><span class="breadcrumb-sep">/</span>
+						<a href="src/filiere.html?type=classique">Prépa classique</a><span class="breadcrumb-sep">/</span>
+						<a href="src/classique/${route.track.code}/index.html">${route.track.title}</a><span class="breadcrumb-sep">/</span>
 						<span>${YEAR_LABELS[route.year] || route.year}</span>
 					</div>
 					<p class="eyebrow">Prépa classique</p>
 					<h1>${route.track.title} - ${YEAR_LABELS[route.year] || route.year}</h1>
 					<p class="hero-lead">Accédez à la structure complète de l’année : cours pour réviser, TDs pour consolider et examens pour vous tester.</p>
 					<div class="hero-actions">
-						<a class="btn btn-light btn-lg" href="/src/classique/${route.track.code}/${route.year}/cours.html">Cours</a>
-						<a class="btn btn-outline-light btn-lg" href="/src/classique/${route.track.code}/${route.year}/tds.html">TDs</a>
-						<a class="btn btn-outline-light btn-lg" href="/src/classique/${route.track.code}/${route.year}/examens.html">Examens</a>
+						<a class="btn btn-light btn-lg" href="src/classique/${route.track.code}/${route.year}/cours.html">Cours</a>
+						<a class="btn btn-outline-light btn-lg" href="src/classique/${route.track.code}/${route.year}/tds.html">TDs</a>
+						<a class="btn btn-outline-light btn-lg" href="src/classique/${route.track.code}/${route.year}/examens.html">Examens</a>
 					</div>
 					<div class="pill-row">
 						<span class="pill ${route.track.accent}">${route.track.label}</span>
 						<span class="pill">${YEAR_LABELS[route.year] || route.year}</span>
-						<span class="pill">Année voisine : <a href="/src/classique/${route.track.code}/${siblingYear}/index.html">${YEAR_LABELS[siblingYear]}</a></span>
+						<span class="pill">Année voisine : <a href="src/classique/${route.track.code}/${siblingYear}/index.html">${YEAR_LABELS[siblingYear]}</a></span>
 					</div>
 				</section>
 
@@ -791,7 +791,7 @@
 			<div class="page-shell">
 				<section class="page-hero fade-in">
 					<div class="breadcrumb">
-						<a href="/src/index.html">Accueil</a><span class="breadcrumb-sep">/</span>
+						<a href="src/index.html">Accueil</a><span class="breadcrumb-sep">/</span>
 						<a href="${buildParentLink(route)}">${route.track ? route.track.title : 'Parcours'}</a><span class="breadcrumb-sep">/</span>
 						<span>${title}</span>
 					</div>
@@ -846,7 +846,7 @@
 				<p>${track.summary}</p>
 				<div class="hero-actions">
 					<a class="btn btn-sm btn-light" href="${url}">Ouvrir</a>
-					<a class="btn btn-sm btn-outline-light" href="/src/search.html?q=${encodeURIComponent(track.title)}">Rechercher</a>
+					<a class="btn btn-sm btn-outline-light" href="src/search.html?q=${encodeURIComponent(track.title)}">Rechercher</a>
 				</div>
 			</article>
 		`;
@@ -860,8 +860,8 @@
 					<h1>${escapeHtml(title)}</h1>
 					<p class="hero-lead">${escapeHtml(text)}</p>
 					<div class="hero-actions">
-						<a class="btn btn-light btn-lg" href="/src/index.html">Retour à l’accueil</a>
-						<a class="btn btn-outline-light btn-lg" href="/src/filiere.html">Choisir une filière</a>
+						<a class="btn btn-light btn-lg" href="src/index.html">Retour à l’accueil</a>
+						<a class="btn btn-outline-light btn-lg" href="src/filiere.html">Choisir une filière</a>
 					</div>
 				</section>
 			</div>
@@ -871,29 +871,29 @@
 	function buildParentLink(route) {
 		if (route.section === 'classique') {
 			if (route.year) {
-				return `/src/classique/${route.track.code}/${route.year}/index.html`;
+				return `src/classique/${route.track.code}/${route.year}/index.html`;
 			}
 
-			return `/src/classique/${route.track.code}/index.html`;
+			return `src/classique/${route.track.code}/index.html`;
 		}
 
 		if (route.section === 'integre') {
 			if (route.branch && route.track && route.track.code === 'cpi2') {
-				return `/src/integre/${route.track.code}/${route.branch}/index.html`;
+				return `src/integre/${route.track.code}/${route.branch}/index.html`;
 			}
 
-			return `/src/integre/${route.track.code}/index.html`;
+			return `src/integre/${route.track.code}/index.html`;
 		}
 
-		return '/src/index.html';
+		return 'src/index.html';
 	}
 
 	function buildSiblingUrl(route, resourceKey) {
 		if (route.section === 'classique') {
-			return `/src/classique/${route.track.code}/${route.year}/${resourceKey}.html`;
+			return `src/classique/${route.track.code}/${route.year}/${resourceKey}.html`;
 		}
 
-		return `/src/integre/${route.track.code}/${route.branch}/${resourceKey}.html`;
+		return `src/integre/${route.track.code}/${route.branch}/${resourceKey}.html`;
 	}
 
 	function buildFooter() {
@@ -909,9 +909,9 @@
 						<div>
 							<h3 class="footer-title">Navigation</h3>
 							<ul class="footer-list">
-								<li><a href="/src/index.html">Accueil</a></li>
-								<li><a href="/src/filiere.html">Filière</a></li>
-								<li><a href="/src/search.html">Recherche</a></li>
+								<li><a href="src/index.html">Accueil</a></li>
+								<li><a href="src/filiere.html">Filière</a></li>
+								<li><a href="src/search.html">Recherche</a></li>
 							</ul>
 						</div>
 						<div>
