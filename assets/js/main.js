@@ -217,14 +217,14 @@
 	}
 
 	function addCatalogEntry(collection, path, title, summary, tags) {
-		collection.push({
-			path,
-			url: `/${path}`,
-			title,
-			summary,
-			tags,
-			searchable: [title, summary, ...(tags || [])].join(' ').toLowerCase()
-		});
+			collection.push({
+				path,
+				url: path,
+				title,
+				summary,
+				tags,
+				searchable: [title, summary, ...(tags || [])].join(' ').toLowerCase()
+			});
 	}
 
 	function getRoute() {
@@ -459,8 +459,8 @@
 			: 'Sélectionnez d’abord le type de prépa à parcourir.';
 
 		const cards = selectedSection === 'classique'
-			? SITE.sections.classique.map((track) => renderTrackPreview(track, `/src/classique/${track.code}/index.html`)).join('')
-			: SITE.sections.integre.map((track) => renderTrackPreview(track, `/src/integre/${track.code}/index.html`)).join('');
+			? SITE.sections.classique.map((track) => renderTrackPreview(track, `src/classique/${track.code}/index.html`)).join('')
+			: SITE.sections.integre.map((track) => renderTrackPreview(track, `src/integre/${track.code}/index.html`)).join('');
 
 		return `
 			<div class="page-shell">
