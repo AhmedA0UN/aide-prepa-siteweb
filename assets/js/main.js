@@ -642,8 +642,11 @@
 						<div>
 							<p class="eyebrow">Matières</p>
 							<h2 class="section-title">${track.code === 'bg' ? 'En cours de construction' : 'Programme du parcours'}</h2>
+							<br>
+							<p>en cours ...</p>
 						</div>
 					</div>
+					<!--
 					<div class="topic-grid">
 						${subjects.map((topic) => `
 							<article class="panel">
@@ -652,7 +655,7 @@
 							</article>
 						`).join('')}
 					</div>
-					${statusCard}
+					${statusCard} -->
 				</section>
 			</div>
 		`;
@@ -1010,7 +1013,7 @@
 					<div class="footer-grid">
 						<div>
 							<h3 class="footer-title">Aide Prépa</h3>
-							<p class="small-note">Un site statique pour naviguer entre les filières, les années et les ressources de révision.</p>
+							<p class="small-note">Un site pour accompagner les étudiants en préparation aux concours d'entrée aux cycles de formation d'ingénieurs.</p>
 						</div>
 						<div>
 							<h3 class="footer-title">Navigation</h3>
@@ -1027,7 +1030,7 @@
 					</div>
 					<div class="mt-4 d-flex flex-wrap justify-content-between gap-2 small-note">
 						<span>© ${year} Aide Prépa</span>
-						<span>Site statique prêt pour Live Server.</span>
+						<span></span>
 					</div>
 				</div>
 			</div>
