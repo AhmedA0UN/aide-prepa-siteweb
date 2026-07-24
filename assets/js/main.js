@@ -62,14 +62,14 @@
 					code: 'cpi1',
 					title: 'CPI1',
 					label: 'Cycle préparatoire intégré 1',
-					summary: 'Une première année avec analyse, algèbre, optique, mécanique générale, électrostatique et magnétostatique, circuits électriques, électromagnétisme, thermodynamique, physique moderne, électronique, systèmes logiques DSA et programmation C.',
+					summary: 'Une première année de cpi qui propose une formation commune en mathématiques, physique et informatique.',
 					accent: 'pill--accent',
 					branches: [
 						{
 							code: 'mpi',
 							title: 'MPI',
 							label: 'Maths - Physique - Informatique',
-							summary: 'Analyse, algèbre, optique, mécanique générale, électrostatique et magnétostatique, circuits électriques, électromagnétisme, thermodynamique, physique moderne (quantique), électronique, systèmes logiques DSA et programmation C.',
+							summary: 'première année du cycle préparatoire intégré est une tranc commun mathématiques - physique - informatique.',
 							topics: ['Analyse', 'Algèbre', 'Optique', 'Mécanique générale', 'Électrostatique', 'Magnétostatique', 'Circuits électriques', 'Électromagnétisme', 'Thermodynamique', 'Physique moderne (quantique)', 'Électronique', 'Systèmes logiques DSA', 'Programmation C']
 						}
 					]
@@ -78,21 +78,21 @@
 					code: 'cpi2',
 					title: 'CPI2',
 					label: 'Cycle préparatoire intégré 2',
-					summary: 'Une deuxième année plus spécialisée avec deux branches distinctes : MI et PI.',
+					summary: 'Une deuxième année plus spécialisée avec deux branches distinctes : MI et PI. ',
 					accent: 'pill--warm',
 					branches: [
 						{
 							code: 'mi',
 							title: 'MI',
 							label: 'Mathématiques - Informatique (Computer Science)',
-							summary: 'Analyse, algèbre, probabilité et statistiques, théorie des graphes, traitement du signal, architectures des ordinateurs, systèmes d’exploitation, POO, programmation C++, programmation Python, BD, logique formelle, fondement de réseau, théorie des langages et automates, compilation, dev web, CSI (COO), transmission de données, réseaux locaux et matières sociaux-culturelles.',
+							summary: 'Pré-orientation pour le monde de l’ingénierie numérique spécialisée en software.',
 							topics: ['Analyse', 'Algèbre', 'Probabilité et statistiques', 'Théorie des graphes', 'Traitement du signal', 'Architectures des ordinateurs', 'Systèmes d’exploitation', 'POO', 'Programmation C++', 'Programmation Python', 'BD', 'Logique formelle', 'Fondement de réseau', 'Théorie des langages et automates', 'Compilation', 'Dev web', 'CSI (COO)', 'Transmission de données', 'Réseaux locaux', 'Matières sociaux-culturelles']
 						},
 						{
 							code: 'pi',
 							title: 'PI',
 							label: 'Physique - Informatique (Computer Engineering)',
-							summary: 'Analyse, algèbre, probabilité et statistiques, théorie des graphes, traitement du signal, architectures des ordinateurs, systèmes d’exploitation, POO, programmation C++, programmation Python, BD, électronique avancée, logique formelle, fondement de réseau, théorie des langages et automates, compilation, dev web, signaux et système, capteurs et instrumentations, physiques d’ondes, transmission de données, réseaux locaux et matières sociaux-culturelles.',
+							summary: 'Pré-orientation pour le monde de l’ingénierie numérique spécialisée en hardware.',
 							topics: ['Analyse', 'Algèbre', 'Probabilité et statistiques', 'Théorie des graphes', 'Traitement du signal', 'Architectures des ordinateurs', 'Systèmes d’exploitation', 'POO', 'Programmation C++', 'Programmation Python', 'BD', 'Électronique avancée', 'Logique formelle', 'Fondement de réseau', 'Théorie des langages et automates', 'Compilation', 'Dev web', 'Signaux et système', 'Capteurs et instrumentations', 'Physiques d’ondes', 'Transmission de données', 'Réseaux locaux', 'Matières sociaux-culturelles']
 						}
 					]
