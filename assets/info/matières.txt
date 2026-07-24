@@ -1,0 +1,13 @@
+en connaissant que les matières :
+1) pour prépa classique :
+-PT (1ere et 2eme année) : analyse, algèbre, physique, chimie générale, STA, CFM, informatique, anglais, Français 
+-pc (1ere et 2eme année) : analyse, algèbre, physique, chimie inorganique, chimie organique, STA, informatique, anglais, Français
+-MP (1ere et 2eme année) : analyse, algèbre, physique, chimie générale, STA, informatique, anglais, Français
+-BG (1ere et 2eme année) : en cours de construction
+
+2) pour prépa intégrée :
+- MPI: analyse, algèbre, optique, mécanique générale, électrostatique et magnétostatique, circuits électriques, électromagnétisme, thermodynamique, physique moderne (quantique), électronique, systèmes logiques DSA, programmation C
+- 2eme année :
+a) MI (CS) : analyse, algèbre, probabilité et Statistiques, théorie des graphes, traitement du signal, architectures des ordinateurs, systèmes d'exploitation, POO, programmation C++, programmation python, BD, logique formelle, fondement de réseau , théorie des langages et automates, compilation, dev web, CSI (COO), transmission de données, réseaux locaux, matières sociaux-culturelles 
+
+b) PI (CE) : analyse, algèbre, probabilité et Statistiques, théorie des graphes, traitement du signal, architectures des ordinateurs, systèmes d'exploitation, POO, programmation C++, programmation python, BD, électronique avancée, logique formelle, fondement de réseau , théorie des langages et automates, compilation, dev web, signaux et système, capteurs et instrumentations, physiques d'ondes, transmission de données, réseaux locaux, matières sociaux-culturelles 
