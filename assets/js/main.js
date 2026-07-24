@@ -70,7 +70,7 @@
 							title: 'MPI',
 							label: 'Maths - Physique - Informatique',
 							summary: 'première année du cycle préparatoire intégré est une tranc commun mathématiques - physique - informatique.',
-							topics: ['Analyse', 'Algèbre', 'Optique', 'Mécanique générale', 'Électrostatique', 'Magnétostatique', 'Circuits électriques', 'Électromagnétisme', 'Thermodynamique', 'Physique moderne (quantique)', 'Électronique', 'Systèmes logiques DSA', 'Programmation C']
+							topics: ['Analyse', 'Algèbre', 'Optique', 'Mécanique générale', 'Électrostatique', 'Magnétostatique', 'Circuits électriques', 'Électromagnétisme', 'Thermodynamique', 'Physique moderne (quantique)', 'Électronique', 'Systèmes logiques', 'DSA', 'Programmation C']
 						}
 					]
 				},
