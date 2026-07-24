@@ -8,37 +8,53 @@
 					code: 'bg',
 					title: 'BG',
 					label: 'Biologie - Géologie',
-					summary: 'Le parcours BG reste en cours de construction, avec une base orientée vers les sciences du vivant, la géologie et les disciplines expérimentales.',
+					summary: 'Le parcours BG est en cours de construction.',
 					accent: 'pill--warm',
 					years: ['1ere', '2eme'],
-					subjects: ['Biologie cellulaire', 'Géologie générale', 'Chimie', 'Physique appliquée']
+					topics: ['En cours de construction'],
+					yearTopics: {
+						'1ere': ['En cours de construction'],
+						'2eme': ['En cours de construction']
+					}
 				},
 				{
 					code: 'mp',
 					title: 'MP',
 					label: 'Maths - Physique',
-					summary: 'Le parcours MP pour travailler l’analyse, l’algèbre, la physique et les bases scientifiques du concours.',
+					summary: 'Le parcours MP pour travailler l’analyse, l’algèbre, la physique, la chimie générale, la STA, l’informatique, l’anglais et le français.',
 					accent: 'pill--accent',
 					years: ['1ere', '2eme'],
-					subjects: ['Analyse', 'Algèbre', 'Physique', 'Chimie générale', 'STA', 'Informatique', 'Anglais', 'Français']
+					topics: ['Analyse', 'Algèbre', 'Physique', 'Chimie générale'],
+					yearTopics: {
+						'1ere': ['Analyse', 'Algèbre', 'Physique', 'Chimie générale', 'STA', 'Informatique', 'Anglais', 'Français'],
+						'2eme': ['Analyse', 'Algèbre', 'Physique', 'Chimie générale', 'STA', 'Informatique', 'Anglais', 'Français']
+					}
 				},
 				{
 					code: 'pc',
 					title: 'PC',
 					label: 'Physique - Chimie',
-					summary: 'Le parcours PC avec un équilibre entre calcul scientifique, chimie et physique appliquée.',
+					summary: 'Le parcours PC pour travailler l’analyse, l’algèbre, la physique, la chimie inorganique, la chimie organique, la STA, l’informatique, l’anglais et le français.',
 					accent: 'pill--warm',
 					years: ['1ere', '2eme'],
-					subjects: ['Analyse', 'Algèbre', 'Physique', 'Chimie inorganique', 'Chimie organique', 'STA', 'Informatique', 'Anglais', 'Français']
+					topics: ['Analyse', 'Algèbre', 'Physique', 'Chimie inorganique'],
+					yearTopics: {
+						'1ere': ['Analyse', 'Algèbre', 'Physique', 'Chimie inorganique', 'Chimie organique', 'STA', 'Informatique', 'Anglais', 'Français'],
+						'2eme': ['Analyse', 'Algèbre', 'Physique', 'Chimie inorganique', 'Chimie organique', 'STA', 'Informatique', 'Anglais', 'Français']
+					}
 				},
 				{
 					code: 'pt',
 					title: 'PT',
 					label: 'Technologie',
-					summary: 'Le parcours PT centré sur les sciences de l’ingénieur, les systèmes et les méthodes de résolution.',
+					summary: 'Le parcours PT pour travailler l’analyse, l’algèbre, la physique, la chimie générale, la STA, la CFM, l’informatique, l’anglais et le français.',
 					accent: 'pill--accent',
 					years: ['1ere', '2eme'],
-					subjects: ['Analyse', 'Algèbre', 'Physique', 'Chimie générale', 'STA', 'CFM', 'Informatique', 'Anglais', 'Français']
+					topics: ['Analyse', 'Algèbre', 'Physique', 'Chimie générale'],
+					yearTopics: {
+						'1ere': ['Analyse', 'Algèbre', 'Physique', 'Chimie générale', 'STA', 'CFM', 'Informatique', 'Anglais', 'Français'],
+						'2eme': ['Analyse', 'Algèbre', 'Physique', 'Chimie générale', 'STA', 'CFM', 'Informatique', 'Anglais', 'Français']
+					}
 				}
 			],
 			integre: [
@@ -46,15 +62,15 @@
 					code: 'cpi1',
 					title: 'CPI1',
 					label: 'Cycle préparatoire intégré 1',
-					summary: 'Une première année pour consolider les bases en maths, physique, informatique et méthodologie scientifique.',
+					summary: 'Une première année avec analyse, algèbre, optique, mécanique générale, électrostatique et magnétostatique, circuits électriques, électromagnétisme, thermodynamique, physique moderne, électronique, systèmes logiques DSA et programmation C.',
 					accent: 'pill--accent',
 					branches: [
 						{
 							code: 'mpi',
 							title: 'MPI',
 							label: 'Maths - Physique - Informatique',
-							summary: 'Analyse, algèbre, optique, mécanique générale et électronique de base pour une montée progressive en autonomie.',
-							subjects: ['Analyse', 'Algèbre', 'Optique', 'Mécanique générale', 'Électrostatique et magnétostatique', 'Circuits électriques', 'Électromagnétisme', 'Thermodynamique', 'Physique moderne (quantique)', 'Électronique', 'Systèmes logiques DSA', 'Programmation C']
+							summary: 'Analyse, algèbre, optique, mécanique générale, électrostatique et magnétostatique, circuits électriques, électromagnétisme, thermodynamique, physique moderne (quantique), électronique, systèmes logiques DSA et programmation C.',
+							topics: ['Analyse', 'Algèbre', 'Optique', 'Mécanique générale', 'Électrostatique', 'Magnétostatique', 'Circuits électriques', 'Électromagnétisme', 'Thermodynamique', 'Physique moderne (quantique)', 'Électronique', 'Systèmes logiques DSA', 'Programmation C']
 						}
 					]
 				},
@@ -62,22 +78,22 @@
 					code: 'cpi2',
 					title: 'CPI2',
 					label: 'Cycle préparatoire intégré 2',
-					summary: 'Une deuxième année plus spécialisée avec deux branches distinctes et davantage d’annales.',
+					summary: 'Une deuxième année plus spécialisée avec deux branches distinctes : MI et PI.',
 					accent: 'pill--warm',
 					branches: [
 						{
 							code: 'mi',
 							title: 'MI',
 							label: 'Mathématiques - Informatique (Computer Science)',
-							summary: 'Travail approfondi en mathématiques, informatique et fondements des systèmes numériques.',
-							subjects: ['Analyse', 'Algèbre', 'Probabilité et Statistiques', 'Théorie des graphes', 'Traitement du signal', 'Architectures des ordinateurs', 'Systèmes d’exploitation', 'POO', 'Programmation C++', 'Programmation python', 'BD', 'Logique formelle', 'Fondement de réseau', 'Théorie des langages et automates', 'Compilation', 'Dev web', 'CSI (COO)', 'Transmission de données', 'Réseaux locaux', 'Matières sociaux-culturelles']
+							summary: 'Analyse, algèbre, probabilité et statistiques, théorie des graphes, traitement du signal, architectures des ordinateurs, systèmes d’exploitation, POO, programmation C++, programmation Python, BD, logique formelle, fondement de réseau, théorie des langages et automates, compilation, dev web, CSI (COO), transmission de données, réseaux locaux et matières sociaux-culturelles.',
+							topics: ['Analyse', 'Algèbre', 'Probabilité et statistiques', 'Théorie des graphes', 'Traitement du signal', 'Architectures des ordinateurs', 'Systèmes d’exploitation', 'POO', 'Programmation C++', 'Programmation Python', 'BD', 'Logique formelle', 'Fondement de réseau', 'Théorie des langages et automates', 'Compilation', 'Dev web', 'CSI (COO)', 'Transmission de données', 'Réseaux locaux', 'Matières sociaux-culturelles']
 						},
 						{
 							code: 'pi',
 							title: 'PI',
 							label: 'Physique - Informatique (Computer Engineering)',
-							summary: 'Une branche tournée vers la physique appliquée, les systèmes et l’expérimentation.',
-							subjects: ['Analyse', 'Algèbre', 'Probabilité et Statistiques', 'Théorie des graphes', 'Traitement du signal', 'Architectures des ordinateurs', 'Systèmes d’exploitation', 'POO', 'Programmation C++', 'Programmation python', 'BD', 'Électronique avancée', 'Logique formelle', 'Fondement de réseau', 'Théorie des langages et automates', 'Compilation', 'Dev web', 'Signaux et système', 'Capteurs et instrumentations', 'Physiques d’ondes', 'Transmission de données', 'Réseaux locaux', 'Matières sociaux-culturelles']
+							summary: 'Analyse, algèbre, probabilité et statistiques, théorie des graphes, traitement du signal, architectures des ordinateurs, systèmes d’exploitation, POO, programmation C++, programmation Python, BD, électronique avancée, logique formelle, fondement de réseau, théorie des langages et automates, compilation, dev web, signaux et système, capteurs et instrumentations, physiques d’ondes, transmission de données, réseaux locaux et matières sociaux-culturelles.',
+							topics: ['Analyse', 'Algèbre', 'Probabilité et statistiques', 'Théorie des graphes', 'Traitement du signal', 'Architectures des ordinateurs', 'Systèmes d’exploitation', 'POO', 'Programmation C++', 'Programmation Python', 'BD', 'Électronique avancée', 'Logique formelle', 'Fondement de réseau', 'Théorie des langages et automates', 'Compilation', 'Dev web', 'Signaux et système', 'Capteurs et instrumentations', 'Physiques d’ondes', 'Transmission de données', 'Réseaux locaux', 'Matières sociaux-culturelles']
 						}
 					]
 				}
@@ -190,28 +206,30 @@
 		addCatalogEntry(catalog, 'src/search.html', 'Recherche', 'Retrouver rapidement une page, un cours ou un examen.', ['recherche', 'navigation']);
 
 		SITE.sections.classique.forEach((track) => {
-			addCatalogEntry(catalog, `src/classique/${track.code}/index.html`, `Prépa classique ${track.title}`, track.summary, [track.code, 'classique', ...(track.subjects || [])]);
+			addCatalogEntry(catalog, `src/classique/${track.code}/index.html`, `Prépa classique ${track.title}`, track.summary, [track.code, 'classique', ...getTrackTopics(track)]);
 
 			['1ere', '2eme'].forEach((year) => {
-				addCatalogEntry(catalog, `src/classique/${track.code}/${year}/index.html`, `${track.title} ${YEAR_LABELS[year]}`, `${track.label} - organisation des ressources de ${YEAR_LABELS[year].toLowerCase()}.`, [track.code, year, 'cours', 'tds', 'examens']);
+				const yearTopics = getYearTopics(track, year);
+				addCatalogEntry(catalog, `src/classique/${track.code}/${year}/index.html`, `${track.title} ${YEAR_LABELS[year]}`, `${track.label} - organisation des ressources de ${YEAR_LABELS[year].toLowerCase()}.`, [track.code, year, 'cours', 'tds', 'examens', ...yearTopics]);
 
 				SITE.resourceKinds.forEach((resource) => {
-					addCatalogEntry(catalog, `src/classique/${track.code}/${year}/${resource.key}.html`, `${resource.title} ${track.title} ${YEAR_LABELS[year]}`, `${resource.summary} pour le parcours ${track.title} en ${YEAR_LABELS[year].toLowerCase()}.`, [track.code, year, resource.key, ...(track.subjects || [])]);
+					addCatalogEntry(catalog, `src/classique/${track.code}/${year}/${resource.key}.html`, `${resource.title} ${track.title} ${YEAR_LABELS[year]}`, `${resource.summary} pour le parcours ${track.title} en ${YEAR_LABELS[year].toLowerCase()}.`, [track.code, year, resource.key, ...yearTopics]);
 				});
 			});
 		});
 
 		SITE.sections.integre.forEach((track) => {
-			addCatalogEntry(catalog, `src/integre/${track.code}/index.html`, `Prépa intégrée ${track.title}`, track.summary, [track.code, 'intégrée', ...getIntegratedTrackSubjects(track)]);
+			addCatalogEntry(catalog, `src/integre/${track.code}/index.html`, `Prépa intégrée ${track.title}`, track.summary, [track.code, 'intégrée']);
 
 			track.branches.forEach((branch) => {
+				const branchTopics = getBranchTopics(branch);
 				const branchIndexPath = `src/integre/${track.code}/${branch.code}/index.html`;
 				if (branchIndexPath) {
-					addCatalogEntry(catalog, branchIndexPath, `${branch.title} ${track.title}`, `${branch.label} - organisation des ressources et repères de travail.`, [track.code, branch.code, ...(branch.subjects || []), 'cours', 'tds', 'examens']);
+					addCatalogEntry(catalog, branchIndexPath, `${branch.title} ${track.title}`, `${branch.label} - organisation des ressources et repères de travail.`, [track.code, branch.code, 'cours', 'tds', 'examens', ...branchTopics]);
 				}
 
 				SITE.resourceKinds.forEach((resource) => {
-					addCatalogEntry(catalog, `src/integre/${track.code}/${branch.code}/${resource.key}.html`, `${resource.title} ${branch.title}`, `${resource.summary} pour la branche ${branch.title}.`, [track.code, branch.code, resource.key, ...(branch.subjects || [])]);
+					addCatalogEntry(catalog, `src/integre/${track.code}/${branch.code}/${resource.key}.html`, `${resource.title} ${branch.title}`, `${resource.summary} pour la branche ${branch.title}.`, [track.code, branch.code, resource.key, ...branchTopics]);
 				});
 			});
 		});
@@ -568,12 +586,21 @@
 	}
 
 	function renderClassicTrack(track) {
+		const subjects = getTrackTopics(track);
+		const statusCard = track.code === 'bg'
+			? `
+				<div class="panel">
+					<h3 class="display-title">BG en construction</h3>
+					<p>Les contenus BG ne sont pas encore publiés. Les prochaines pages garderont cette structure pour accueillir les matières de biologie et de géologie.</p>
+				</div>
+			`
+			: '';
+
 		const yearCards = track.years.map((year) => `
 			<article class="content-card route-card">
 				<span class="pill ${track.accent}">${track.title}</span>
 				<h3>${YEAR_LABELS[year]}</h3>
 				<p>${track.label} - accès direct aux cours, aux TDs et aux examens de ${YEAR_LABELS[year].toLowerCase()}.</p>
-				<div class="pill-row">${renderSubjectPills(track.subjects, 4)}</div>
 				<div class="hero-actions">
 					<a class="btn btn-sm btn-light" href="src/classique/${track.code}/${year}/index.html">Ouvrir l’année</a>
 					<a class="btn btn-sm btn-outline-light" href="src/classique/${track.code}/${year}/cours.html">Cours</a>
@@ -597,7 +624,7 @@
 						<a class="btn btn-light btn-lg" href="src/classique/${track.code}/1ere/index.html">Commencer en 1ère année</a>
 						<a class="btn btn-outline-light btn-lg" href="src/classique/${track.code}/2eme/index.html">Aller en 2ème année</a>
 					</div>
-					<div class="pill-row">${renderSubjectPills(track.subjects)}</div>
+					<div class="pill-row">${track.topics.map((topic) => `<span class="pill">${escapeHtml(topic)}</span>`).join('')}</div>
 				</section>
 				<section class="section-block fade-in delay-1">
 					<div class="section-head">
@@ -609,18 +636,39 @@
 					</div>
 					<div class="grid-3">${yearCards}</div>
 				</section>
+
+				<section class="section-block fade-in delay-2">
+					<div class="section-head">
+						<div>
+							<p class="eyebrow">Matières</p>
+							<h2 class="section-title">${track.code === 'bg' ? 'En cours de construction' : 'Programme du parcours'}</h2>
+						</div>
+					</div>
+					<div class="topic-grid">
+						${subjects.map((topic) => `
+							<article class="panel">
+								<h3 class="display-title">${escapeHtml(topic)}</h3>
+								<p>${track.code === 'bg' ? 'Le contenu détaillé sera ajouté quand le parcours sera finalisé.' : `Matière de référence du parcours ${track.title}.`}</p>
+							</article>
+						`).join('')}
+					</div>
+					${statusCard}
+				</section>
 			</div>
 		`;
 	}
 
 	function renderIntegratedTrack(track) {
+		const subjects = track.code === 'cpi1'
+			? getBranchTopics(track.branches[0])
+			: track.branches.flatMap((branch) => getBranchTopics(branch));
+
 		const branchCards = track.branches.map((branch) => `
 			<article class="content-card route-card">
 				<span class="pill ${track.accent}">${track.title}</span>
 				<h3>${branch.title}</h3>
 				<p>${branch.label}</p>
 				<p>${branch.summary}</p>
-				<div class="pill-row">${renderSubjectPills(branch.subjects, 5)}</div>
 				<div class="hero-actions">
 					${track.code === 'cpi2'
 						? `<a class="btn btn-sm btn-light" href="src/integre/${track.code}/${branch.code}/index.html">Ouvrir la branche</a>`
@@ -643,7 +691,6 @@
 					<h1>${track.title} - ${track.label}</h1>
 					<p class="hero-lead">${track.summary}</p>
 					<div class="pill-row">${track.branches.map((branch) => `<span class="pill">${escapeHtml(branch.label)}</span>`).join('')}</div>
-					<div class="pill-row">${renderSubjectPills(getIntegratedTrackSubjects(track), 6)}</div>
 				</section>
 				<section class="section-block fade-in delay-1">
 					<div class="section-head">
@@ -654,6 +701,23 @@
 						<p class="section-lead">Les ressources suivent la branche et le type de travail demandé.</p>
 					</div>
 					<div class="grid-3">${branchCards}</div>
+				</section>
+
+				<section class="section-block fade-in delay-2">
+					<div class="section-head">
+						<div>
+							<p class="eyebrow">Matières</p>
+							<h2 class="section-title">${track.code === 'cpi1' ? 'Programme de CPI1' : 'Programme commun avant spécialisation'}</h2>
+						</div>
+					</div>
+					<div class="topic-grid">
+						${subjects.map((topic) => `
+							<article class="panel">
+								<h3 class="display-title">${escapeHtml(topic)}</h3>
+								<p>Matière proposée dans le cycle ${track.title}.</p>
+							</article>
+						`).join('')}
+					</div>
 				</section>
 			</div>
 		`;
@@ -669,12 +733,13 @@
 			return renderFallback('Branche introuvable', 'La branche demandée n’est pas disponible dans ce cycle.');
 		}
 
+		const topics = getBranchTopics(branch);
+
 		const resourceCards = SITE.resourceKinds.map((resource) => `
 			<article class="content-card route-card">
 				<span class="pill ${route.track.accent}">${resource.label}</span>
 				<h3>${resource.title}</h3>
 				<p>${resource.summary}</p>
-				<div class="pill-row">${renderSubjectPills(branch.subjects, 5)}</div>
 				<a class="btn btn-sm btn-light" href="src/integre/${route.track.code}/${branch.code}/${resource.key}.html">Ouvrir ${resource.title.toLowerCase()}</a>
 			</article>
 		`).join('');
@@ -691,7 +756,6 @@
 					<p class="eyebrow">Branche ${route.track.title}</p>
 					<h1>${branch.title} - ${branch.label}</h1>
 					<p class="hero-lead">${branch.summary}</p>
-					<div class="pill-row">${renderSubjectPills(branch.subjects, 6)}</div>
 				</section>
 				<section class="section-block fade-in delay-1">
 					<div class="section-head">
@@ -701,6 +765,23 @@
 						</div>
 					</div>
 					<div class="grid-3">${resourceCards}</div>
+				</section>
+
+				<section class="section-block fade-in delay-2">
+					<div class="section-head">
+						<div>
+							<p class="eyebrow">Matières</p>
+							<h2 class="section-title">Programme détaillé</h2>
+						</div>
+					</div>
+					<div class="topic-grid">
+						${topics.map((topic) => `
+							<article class="panel">
+								<h3 class="display-title">${escapeHtml(topic)}</h3>
+								<p>Matière de la branche ${branch.title}.</p>
+							</article>
+						`).join('')}
+					</div>
 				</section>
 			</div>
 		`;
@@ -716,7 +797,6 @@
 				<span class="pill ${route.track.accent}">${resource.label}</span>
 				<h3>${resource.title}</h3>
 				<p>${resource.summary}</p>
-				<div class="pill-row">${renderSubjectPills(route.track.subjects, 5)}</div>
 				<a class="btn btn-sm btn-light" href="src/classique/${route.track.code}/${route.year}/${resource.key}.html">Ouvrir ${resource.title.toLowerCase()}</a>
 			</article>
 		`).join('');
@@ -745,7 +825,6 @@
 						<span class="pill">${YEAR_LABELS[route.year] || route.year}</span>
 						<span class="pill">Année voisine : <a href="src/classique/${route.track.code}/${siblingYear}/index.html">${YEAR_LABELS[siblingYear]}</a></span>
 					</div>
-					<div class="pill-row">${renderSubjectPills(route.track.subjects, 6)}</div>
 				</section>
 
 				<section class="section-block fade-in delay-1">
@@ -757,6 +836,23 @@
 						<p class="section-lead">Le même parcours pour toutes les années, avec un contenu qui s’adapte à la filière.</p>
 					</div>
 					<div class="grid-3">${resourceCards}</div>
+				</section>
+
+				<section class="section-block fade-in delay-2">
+					<div class="section-head">
+						<div>
+							<p class="eyebrow">Matières</p>
+							<h2 class="section-title">${route.track.code === 'bg' ? 'Parcours en construction' : `Programme de ${YEAR_LABELS[route.year] || route.year}`}</h2>
+						</div>
+					</div>
+					<div class="topic-grid">
+						${getYearTopics(route.track, route.year).map((topic) => `
+							<article class="panel">
+								<h3 class="display-title">${escapeHtml(topic)}</h3>
+								<p>${route.track.code === 'bg' ? 'Le détail n’est pas encore publié.' : `Matière travaillée en ${YEAR_LABELS[route.year] || route.year}.`}</p>
+							</article>
+						`).join('')}
+					</div>
 				</section>
 
 				<section class="section-block fade-in delay-2">
@@ -808,7 +904,6 @@
 					<p class="eyebrow">${route.section === 'classique' ? 'Prépa classique' : 'Prépa intégrée'}</p>
 					<h1>${title}</h1>
 					<p class="hero-lead">${resource.summary} ${route.track ? `Le contenu est adapté au parcours ${route.track.title}${route.year ? ` et à ${YEAR_LABELS[route.year] || route.year}` : ''}.` : ''}</p>
-					<div class="pill-row">${renderSubjectPills(topicPool, 6)}</div>
 					<div class="hero-actions">${siblingLinks}</div>
 				</section>
 
@@ -850,14 +945,11 @@
 	}
 
 	function renderTrackPreview(track, url) {
-		const previewSubjects = track.subjects && track.subjects.length ? track.subjects : getIntegratedTrackSubjects(track);
-
 		return `
 			<article class="content-card fade-in">
 				<span class="pill ${track.accent}">${track.title}</span>
 				<h3>${track.label}</h3>
 				<p>${track.summary}</p>
-				<div class="pill-row">${renderSubjectPills(previewSubjects, 4)}</div>
 				<div class="hero-actions">
 					<a class="btn btn-sm btn-light" href="${url}">Ouvrir</a>
 					<a class="btn btn-sm btn-outline-light" href="src/search.html?q=${encodeURIComponent(track.title)}">Rechercher</a>
@@ -958,38 +1050,43 @@
 	}
 
 	function getTopicPool(route) {
-		if (route.section === 'classique' && route.track && Array.isArray(route.track.subjects)) {
-			return route.track.subjects.slice(0, 6);
+		if (route.section === 'classique' && route.track) {
+			return getYearTopics(route.track, route.year).slice(0, 4);
+		}
+
+		if (route.section === 'integre' && route.track) {
+			if (route.branch) {
+				return getBranchTopics((route.track.branches || []).find((branch) => branch.code === route.branch)).slice(0, 4);
+			}
+
+			return getBranchTopics((route.track.branches || [])[0]).slice(0, 4);
+		}
+
+		if (route.track && Array.isArray(route.track.topics)) {
+			return route.track.topics.slice(0, 4);
 		}
 
 		if (route.section === 'integre') {
-			const branch = getBranch(route);
-			if (branch && Array.isArray(branch.subjects)) {
-				return branch.subjects.slice(0, 6);
-			}
-		}
-
-		if (route.track && Array.isArray(route.track.subjects)) {
-			return route.track.subjects.slice(0, 6);
+			return ['Mathématiques', 'Physique', 'Informatique', 'Méthodologie'];
 		}
 
 		return ['Notion 1', 'Notion 2', 'Notion 3', 'Notion 4'];
 	}
 
-	function getBranch(route) {
-		if (!route.track || !route.branch) {
-			return null;
+	function getTrackTopics(track) {
+		return Array.isArray(track && track.topics) ? track.topics : [];
+	}
+
+	function getYearTopics(track, year) {
+		if (track && track.yearTopics && Array.isArray(track.yearTopics[year])) {
+			return track.yearTopics[year];
 		}
 
-		return (route.track.branches || []).find((item) => item.code === route.branch) || null;
+		return getTrackTopics(track);
 	}
 
-	function getIntegratedTrackSubjects(track) {
-		return (track.branches || []).reduce((allSubjects, branch) => allSubjects.concat(branch.subjects || []), []);
-	}
-
-	function renderSubjectPills(subjects, limit = 99) {
-		return (subjects || []).slice(0, limit).map((subject) => `<span class="pill">${escapeHtml(subject)}</span>`).join('');
+	function getBranchTopics(branch) {
+		return Array.isArray(branch && branch.topics) ? branch.topics : [];
 	}
 
 	function primaryTag(tags) {
