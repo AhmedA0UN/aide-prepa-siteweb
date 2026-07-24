@@ -62,7 +62,7 @@
 					code: 'cpi1',
 					title: 'CPI1',
 					label: 'Cycle préparatoire intégré 1',
-					summary: 'Une première année de cpi qui propose une formation commune en mathématiques, physique et informatique.',
+					summary: 'Une première année de cpi qui propose une formation commune en mathématiques, physique et informatique  - MPI.',
 					accent: 'pill--accent',
 					branches: [
 						{
@@ -128,6 +128,71 @@
 		'1ere': '1ère année',
 		'2eme': '2ème année'
 	};
+
+	const TOPIC_SOURCE_GROUPS = [
+		{
+			patterns: [/(analyse|alg[eè]bre|probabilit|statist|graphes?|logique formelle|automates?|math)/i],
+			sources: [
+				{ label: 'Khan Academy', url: 'https://fr.khanacademy.org/math' },
+				{ label: 'Math Is Fun', url: 'https://www.mathsisfun.com/' },
+				{ label: 'Wolfram MathWorld', url: 'https://mathworld.wolfram.com/' }
+			]
+		},
+		{
+			patterns: [/(physique|m[eé]canique|optique|electrostatique|magn[eé]tostatique|electromagn[eé]tisme|thermodynamique|ondes?|physique moderne|signal)/i],
+			sources: [
+				{ label: 'Khan Academy', url: 'https://fr.khanacademy.org/science/physics' },
+				{ label: 'PhET', url: 'https://phet.colorado.edu/' },
+				{ label: 'HyperPhysics', url: 'http://hyperphysics.phy-astr.gsu.edu/' }
+			]
+		},
+		{
+			patterns: [/(chimie|organique|inorganique)/i],
+			sources: [
+				{ label: 'Khan Academy', url: 'https://fr.khanacademy.org/science/chemistry' },
+				{ label: 'LibreTexts Chemistry', url: 'https://chem.libretexts.org/' },
+				{ label: 'Chemguide', url: 'https://www.chemguide.co.uk/' }
+			]
+		},
+		{
+			patterns: [/(informatique|programmation|poo|python|c\+\+|dev web|bd\b|base de donn[eé]es|architecture des ordinateurs|syst[eè]mes? d’exploitation|fondement de r[eé]seau|r[eé]seau|compilation|coo|dsa|logiciel)/i],
+			sources: [
+				{ label: 'MDN Web Docs', url: 'https://developer.mozilla.org/' },
+				{ label: 'cppreference', url: 'https://en.cppreference.com/' },
+				{ label: 'Python Docs', url: 'https://docs.python.org/3/' }
+			]
+		},
+		{
+			patterns: [/(électronique|electronique|circuits?|capteurs?|instrumentations?|syst[eè]mes? logiques|hardware)/i],
+			sources: [
+				{ label: 'All About Circuits', url: 'https://www.allaboutcircuits.com/' },
+				{ label: 'Falstad Circuit', url: 'https://falstad.com/circuit/' },
+				{ label: 'Electronics-Tutorials', url: 'https://www.electronics-tutorials.ws/' }
+			]
+		},
+		{
+			patterns: [/(anglais|français|langue|social|culture)/i],
+			sources: [
+				{ label: 'BBC Learning English', url: 'https://www.bbc.co.uk/learningenglish' },
+				{ label: 'TV5MONDE', url: 'https://apprendre.tv5monde.com/' },
+				{ label: 'Cambridge Dictionary', url: 'https://dictionary.cambridge.org/' }
+			]
+		},
+		{
+			patterns: [/(biologie|géologie|geologie|écologie|anatomie|bg\b)/i],
+			sources: [
+				{ label: 'Khan Academy Biology', url: 'https://fr.khanacademy.org/science/biology' },
+				{ label: 'HHMI BioInteractive', url: 'https://www.biointeractive.org/' },
+				{ label: 'OpenStax Biology', url: 'https://openstax.org/details/books/biology-2e' }
+			]
+		}
+	];
+
+	const DEFAULT_TOPIC_SOURCES = [
+		{ label: 'Khan Academy', url: 'https://www.khanacademy.org/' },
+		{ label: 'OpenStax', url: 'https://openstax.org/' },
+		{ label: 'Wikipedia', url: 'https://www.wikipedia.org/' }
+	];
 
 	const TRACK_MAP = new Map();
 	const CATALOG = buildCatalog();
@@ -595,6 +660,11 @@
 				</div>
 			`
 			: '';
+		const subjectCards = track.code === 'bg'
+			? statusCard
+			: subjects.length
+			? subjects.map((topic) => renderTopicPanel(topic, `Matière de référence du parcours ${track.title}.`)).join('')
+			: statusCard;
 
 		const yearCards = track.years.map((year) => `
 			<article class="content-card route-card">
@@ -642,20 +712,11 @@
 						<div>
 							<p class="eyebrow">Matières</p>
 							<h2 class="section-title">${track.code === 'bg' ? 'En cours de construction' : 'Programme du parcours'}</h2>
-							<br>
-							<p>en cours ...</p>
 						</div>
 					</div>
-					<!--
 					<div class="topic-grid">
-						${subjects.map((topic) => `
-							<article class="panel">
-								<h3 class="display-title">${escapeHtml(topic)}</h3>
-								<p>${track.code === 'bg' ? 'Le contenu détaillé sera ajouté quand le parcours sera finalisé.' : `Matière de référence du parcours ${track.title}.`}</p>
-							</article>
-						`).join('')}
+						${subjectCards}
 					</div>
-					${statusCard} -->
 				</section>
 			</div>
 		`;
@@ -665,6 +726,7 @@
 		const subjects = track.code === 'cpi1'
 			? getBranchTopics(track.branches[0])
 			: track.branches.flatMap((branch) => getBranchTopics(branch));
+		const uniqueSubjects = Array.from(new Set(subjects));
 
 		const branchCards = track.branches.map((branch) => `
 			<article class="content-card route-card">
@@ -703,7 +765,7 @@
 						</div>
 						<p class="section-lead">Les ressources suivent la branche et le type de travail demandé.</p>
 					</div>
-					<div class="grid-3">${branchCards}</div>
+					<!-- <div class="grid-3">${branchCards}</div> -->
 				</section>
 
 				<section class="section-block fade-in delay-2">
@@ -714,12 +776,7 @@
 						</div>
 					</div>
 					<div class="topic-grid">
-						${subjects.map((topic) => `
-							<article class="panel">
-								<h3 class="display-title">${escapeHtml(topic)}</h3>
-								<p>Matière proposée dans le cycle ${track.title}.</p>
-							</article>
-						`).join('')}
+						${uniqueSubjects.map((topic) => renderTopicPanel(topic, `Matière proposée dans le cycle ${track.title}.`)).join('')}
 					</div>
 				</section>
 			</div>
@@ -778,12 +835,7 @@
 						</div>
 					</div>
 					<div class="topic-grid">
-						${topics.map((topic) => `
-							<article class="panel">
-								<h3 class="display-title">${escapeHtml(topic)}</h3>
-								<p>Matière de la branche ${branch.title}.</p>
-							</article>
-						`).join('')}
+						${topics.map((topic) => renderTopicPanel(topic, `Matière de la branche ${branch.title}.`)).join('')}
 					</div>
 				</section>
 			</div>
@@ -849,12 +901,7 @@
 						</div>
 					</div>
 					<div class="topic-grid">
-						${getYearTopics(route.track, route.year).map((topic) => `
-							<article class="panel">
-								<h3 class="display-title">${escapeHtml(topic)}</h3>
-								<p>${route.track.code === 'bg' ? 'Le détail n’est pas encore publié.' : `Matière travaillée en ${YEAR_LABELS[route.year] || route.year}.`}</p>
-							</article>
-						`).join('')}
+						${getYearTopics(route.track, route.year).map((topic) => renderTopicPanel(topic, route.track.code === 'bg' ? 'Le détail n’est pas encore publié.' : `Matière travaillée en ${YEAR_LABELS[route.year] || route.year}.`)).join('')}
 					</div>
 				</section>
 
@@ -1050,6 +1097,31 @@
 		};
 
 		return sentences[resourceKey] || 'Travaillez la notion, puis vérifiez votre méthode sur des exercices progressifs.';
+	}
+
+	function renderTopicPanel(topic, description) {
+		const sources = getTopicSources(topic);
+
+		return `
+			<article class="panel topic-panel">
+				<div class="topic-panel-head">
+					<h3 class="display-title">${escapeHtml(topic)}</h3>
+					<span class="pill">Sources</span>
+				</div>
+				<p>${escapeHtml(description)}</p>
+				<div class="source-links">
+					${sources.map((source) => `
+						<a class="source-link" href="${source.url}" target="_blank" rel="noopener noreferrer">${escapeHtml(source.label)}</a>
+					`).join('')}
+				</div>
+			</article>
+		`;
+	}
+
+	function getTopicSources(topic) {
+		const normalizedTopic = String(topic || '').toLowerCase();
+		const match = TOPIC_SOURCE_GROUPS.find((group) => group.patterns.some((pattern) => pattern.test(normalizedTopic)));
+		return match ? match.sources : DEFAULT_TOPIC_SOURCES;
 	}
 
 	function getTopicPool(route) {
