@@ -8,37 +8,37 @@
 					code: 'bg',
 					title: 'BG',
 					label: 'Biologie - Géologie',
-					summary: 'Le parcours BG pour consolider les sciences du vivant, la géologie, la chimie et la physique appliquée.',
+					summary: 'Le parcours BG reste en cours de construction, avec une base orientée vers les sciences du vivant, la géologie et les disciplines expérimentales.',
 					accent: 'pill--warm',
 					years: ['1ere', '2eme'],
-					topics: ['Biologie cellulaire', 'Géologie générale', 'Chimie', 'Physique appliquée']
+					subjects: ['Biologie cellulaire', 'Géologie générale', 'Chimie', 'Physique appliquée']
 				},
 				{
 					code: 'mp',
 					title: 'MP',
 					label: 'Maths - Physique',
-					summary: 'Le parcours MP pour travailler l’analyse, l’algèbre, la mécanique et l’électromagnétisme.',
+					summary: 'Le parcours MP pour travailler l’analyse, l’algèbre, la physique et les bases scientifiques du concours.',
 					accent: 'pill--accent',
 					years: ['1ere', '2eme'],
-					topics: ['Analyse', 'Algèbre', 'Mécanique', 'Électromagnétisme']
+					subjects: ['Analyse', 'Algèbre', 'Physique', 'Chimie générale', 'STA', 'Informatique', 'Anglais', 'Français']
 				},
 				{
 					code: 'pc',
 					title: 'PC',
 					label: 'Physique - Chimie',
-					summary: 'Le parcours PC avec un équilibre entre calcul scientifique, thermodynamique, mécanique et chimie.',
+					summary: 'Le parcours PC avec un équilibre entre calcul scientifique, chimie et physique appliquée.',
 					accent: 'pill--warm',
 					years: ['1ere', '2eme'],
-					topics: ['Thermodynamique', 'Cinétique', 'Mécanique', 'Chimie']
+					subjects: ['Analyse', 'Algèbre', 'Physique', 'Chimie inorganique', 'Chimie organique', 'STA', 'Informatique', 'Anglais', 'Français']
 				},
 				{
 					code: 'pt',
 					title: 'PT',
 					label: 'Technologie',
-					summary: 'Le parcours PT centré sur les systèmes, la mécanique, la construction et les sciences industrielles.',
+					summary: 'Le parcours PT centré sur les sciences de l’ingénieur, les systèmes et les méthodes de résolution.',
 					accent: 'pill--accent',
 					years: ['1ere', '2eme'],
-					topics: ['Construction', 'Mécanique', 'Automatique', 'Sciences industrielles']
+					subjects: ['Analyse', 'Algèbre', 'Physique', 'Chimie générale', 'STA', 'CFM', 'Informatique', 'Anglais', 'Français']
 				}
 			],
 			integre: [
@@ -46,14 +46,15 @@
 					code: 'cpi1',
 					title: 'CPI1',
 					label: 'Cycle préparatoire intégré 1',
-					summary: 'Une première année pour consolider les bases en maths, physique, informatique et méthodologie.',
+					summary: 'Une première année pour consolider les bases en maths, physique, informatique et méthodologie scientifique.',
 					accent: 'pill--accent',
 					branches: [
 						{
 							code: 'mpi',
 							title: 'MPI',
 							label: 'Maths - Physique - Informatique',
-							summary: 'Un axe scientifique polyvalent avec beaucoup d’exercices et de raisonnement.'
+							summary: 'Analyse, algèbre, optique, mécanique générale et électronique de base pour une montée progressive en autonomie.',
+							subjects: ['Analyse', 'Algèbre', 'Optique', 'Mécanique générale', 'Électrostatique et magnétostatique', 'Circuits électriques', 'Électromagnétisme', 'Thermodynamique', 'Physique moderne (quantique)', 'Électronique', 'Systèmes logiques DSA', 'Programmation C']
 						}
 					]
 				},
@@ -61,20 +62,22 @@
 					code: 'cpi2',
 					title: 'CPI2',
 					label: 'Cycle préparatoire intégré 2',
-					summary: 'Une deuxième année plus spécialisée avec des branches distinctes et davantage d’annales.',
+					summary: 'Une deuxième année plus spécialisée avec deux branches distinctes et davantage d’annales.',
 					accent: 'pill--warm',
 					branches: [
 						{
 							code: 'mi',
 							title: 'MI',
 							label: 'Mathématiques - Informatique (Computer Science)',
-							summary: 'Travail approfondi en algorithmique, structure de données et modélisation.'
+							summary: 'Travail approfondi en mathématiques, informatique et fondements des systèmes numériques.',
+							subjects: ['Analyse', 'Algèbre', 'Probabilité et Statistiques', 'Théorie des graphes', 'Traitement du signal', 'Architectures des ordinateurs', 'Systèmes d’exploitation', 'POO', 'Programmation C++', 'Programmation python', 'BD', 'Logique formelle', 'Fondement de réseau', 'Théorie des langages et automates', 'Compilation', 'Dev web', 'CSI (COO)', 'Transmission de données', 'Réseaux locaux', 'Matières sociaux-culturelles']
 						},
 						{
 							code: 'pi',
 							title: 'PI',
 							label: 'Physique - Informatique (Computer Engineering)',
-							summary: 'Une branche tournée vers la physique appliquée, les systèmes et l’expérimentation.'
+							summary: 'Une branche tournée vers la physique appliquée, les systèmes et l’expérimentation.',
+							subjects: ['Analyse', 'Algèbre', 'Probabilité et Statistiques', 'Théorie des graphes', 'Traitement du signal', 'Architectures des ordinateurs', 'Systèmes d’exploitation', 'POO', 'Programmation C++', 'Programmation python', 'BD', 'Électronique avancée', 'Logique formelle', 'Fondement de réseau', 'Théorie des langages et automates', 'Compilation', 'Dev web', 'Signaux et système', 'Capteurs et instrumentations', 'Physiques d’ondes', 'Transmission de données', 'Réseaux locaux', 'Matières sociaux-culturelles']
 						}
 					]
 				}
@@ -187,28 +190,28 @@
 		addCatalogEntry(catalog, 'src/search.html', 'Recherche', 'Retrouver rapidement une page, un cours ou un examen.', ['recherche', 'navigation']);
 
 		SITE.sections.classique.forEach((track) => {
-			addCatalogEntry(catalog, `src/classique/${track.code}/index.html`, `Prépa classique ${track.title}`, track.summary, [track.code, 'classique', ...track.topics]);
+			addCatalogEntry(catalog, `src/classique/${track.code}/index.html`, `Prépa classique ${track.title}`, track.summary, [track.code, 'classique', ...(track.subjects || [])]);
 
 			['1ere', '2eme'].forEach((year) => {
 				addCatalogEntry(catalog, `src/classique/${track.code}/${year}/index.html`, `${track.title} ${YEAR_LABELS[year]}`, `${track.label} - organisation des ressources de ${YEAR_LABELS[year].toLowerCase()}.`, [track.code, year, 'cours', 'tds', 'examens']);
 
 				SITE.resourceKinds.forEach((resource) => {
-					addCatalogEntry(catalog, `src/classique/${track.code}/${year}/${resource.key}.html`, `${resource.title} ${track.title} ${YEAR_LABELS[year]}`, `${resource.summary} pour le parcours ${track.title} en ${YEAR_LABELS[year].toLowerCase()}.`, [track.code, year, resource.key, ...track.topics]);
+					addCatalogEntry(catalog, `src/classique/${track.code}/${year}/${resource.key}.html`, `${resource.title} ${track.title} ${YEAR_LABELS[year]}`, `${resource.summary} pour le parcours ${track.title} en ${YEAR_LABELS[year].toLowerCase()}.`, [track.code, year, resource.key, ...(track.subjects || [])]);
 				});
 			});
 		});
 
 		SITE.sections.integre.forEach((track) => {
-			addCatalogEntry(catalog, `src/integre/${track.code}/index.html`, `Prépa intégrée ${track.title}`, track.summary, [track.code, 'intégrée']);
+			addCatalogEntry(catalog, `src/integre/${track.code}/index.html`, `Prépa intégrée ${track.title}`, track.summary, [track.code, 'intégrée', ...getIntegratedTrackSubjects(track)]);
 
 			track.branches.forEach((branch) => {
 				const branchIndexPath = `src/integre/${track.code}/${branch.code}/index.html`;
 				if (branchIndexPath) {
-					addCatalogEntry(catalog, branchIndexPath, `${branch.title} ${track.title}`, `${branch.label} - organisation des ressources et repères de travail.`, [track.code, branch.code, 'cours', 'tds', 'examens']);
+					addCatalogEntry(catalog, branchIndexPath, `${branch.title} ${track.title}`, `${branch.label} - organisation des ressources et repères de travail.`, [track.code, branch.code, ...(branch.subjects || []), 'cours', 'tds', 'examens']);
 				}
 
 				SITE.resourceKinds.forEach((resource) => {
-					addCatalogEntry(catalog, `src/integre/${track.code}/${branch.code}/${resource.key}.html`, `${resource.title} ${branch.title}`, `${resource.summary} pour la branche ${branch.title}.`, [track.code, branch.code, resource.key]);
+					addCatalogEntry(catalog, `src/integre/${track.code}/${branch.code}/${resource.key}.html`, `${resource.title} ${branch.title}`, `${resource.summary} pour la branche ${branch.title}.`, [track.code, branch.code, resource.key, ...(branch.subjects || [])]);
 				});
 			});
 		});
@@ -570,6 +573,7 @@
 				<span class="pill ${track.accent}">${track.title}</span>
 				<h3>${YEAR_LABELS[year]}</h3>
 				<p>${track.label} - accès direct aux cours, aux TDs et aux examens de ${YEAR_LABELS[year].toLowerCase()}.</p>
+				<div class="pill-row">${renderSubjectPills(track.subjects, 4)}</div>
 				<div class="hero-actions">
 					<a class="btn btn-sm btn-light" href="src/classique/${track.code}/${year}/index.html">Ouvrir l’année</a>
 					<a class="btn btn-sm btn-outline-light" href="src/classique/${track.code}/${year}/cours.html">Cours</a>
@@ -593,7 +597,7 @@
 						<a class="btn btn-light btn-lg" href="src/classique/${track.code}/1ere/index.html">Commencer en 1ère année</a>
 						<a class="btn btn-outline-light btn-lg" href="src/classique/${track.code}/2eme/index.html">Aller en 2ème année</a>
 					</div>
-					<div class="pill-row">${track.topics.map((topic) => `<span class="pill">${escapeHtml(topic)}</span>`).join('')}</div>
+					<div class="pill-row">${renderSubjectPills(track.subjects)}</div>
 				</section>
 				<section class="section-block fade-in delay-1">
 					<div class="section-head">
@@ -616,6 +620,7 @@
 				<h3>${branch.title}</h3>
 				<p>${branch.label}</p>
 				<p>${branch.summary}</p>
+				<div class="pill-row">${renderSubjectPills(branch.subjects, 5)}</div>
 				<div class="hero-actions">
 					${track.code === 'cpi2'
 						? `<a class="btn btn-sm btn-light" href="src/integre/${track.code}/${branch.code}/index.html">Ouvrir la branche</a>`
@@ -638,6 +643,7 @@
 					<h1>${track.title} - ${track.label}</h1>
 					<p class="hero-lead">${track.summary}</p>
 					<div class="pill-row">${track.branches.map((branch) => `<span class="pill">${escapeHtml(branch.label)}</span>`).join('')}</div>
+					<div class="pill-row">${renderSubjectPills(getIntegratedTrackSubjects(track), 6)}</div>
 				</section>
 				<section class="section-block fade-in delay-1">
 					<div class="section-head">
@@ -668,6 +674,7 @@
 				<span class="pill ${route.track.accent}">${resource.label}</span>
 				<h3>${resource.title}</h3>
 				<p>${resource.summary}</p>
+				<div class="pill-row">${renderSubjectPills(branch.subjects, 5)}</div>
 				<a class="btn btn-sm btn-light" href="src/integre/${route.track.code}/${branch.code}/${resource.key}.html">Ouvrir ${resource.title.toLowerCase()}</a>
 			</article>
 		`).join('');
@@ -684,6 +691,7 @@
 					<p class="eyebrow">Branche ${route.track.title}</p>
 					<h1>${branch.title} - ${branch.label}</h1>
 					<p class="hero-lead">${branch.summary}</p>
+					<div class="pill-row">${renderSubjectPills(branch.subjects, 6)}</div>
 				</section>
 				<section class="section-block fade-in delay-1">
 					<div class="section-head">
@@ -708,6 +716,7 @@
 				<span class="pill ${route.track.accent}">${resource.label}</span>
 				<h3>${resource.title}</h3>
 				<p>${resource.summary}</p>
+				<div class="pill-row">${renderSubjectPills(route.track.subjects, 5)}</div>
 				<a class="btn btn-sm btn-light" href="src/classique/${route.track.code}/${route.year}/${resource.key}.html">Ouvrir ${resource.title.toLowerCase()}</a>
 			</article>
 		`).join('');
@@ -736,6 +745,7 @@
 						<span class="pill">${YEAR_LABELS[route.year] || route.year}</span>
 						<span class="pill">Année voisine : <a href="src/classique/${route.track.code}/${siblingYear}/index.html">${YEAR_LABELS[siblingYear]}</a></span>
 					</div>
+					<div class="pill-row">${renderSubjectPills(route.track.subjects, 6)}</div>
 				</section>
 
 				<section class="section-block fade-in delay-1">
@@ -798,6 +808,7 @@
 					<p class="eyebrow">${route.section === 'classique' ? 'Prépa classique' : 'Prépa intégrée'}</p>
 					<h1>${title}</h1>
 					<p class="hero-lead">${resource.summary} ${route.track ? `Le contenu est adapté au parcours ${route.track.title}${route.year ? ` et à ${YEAR_LABELS[route.year] || route.year}` : ''}.` : ''}</p>
+					<div class="pill-row">${renderSubjectPills(topicPool, 6)}</div>
 					<div class="hero-actions">${siblingLinks}</div>
 				</section>
 
@@ -839,11 +850,14 @@
 	}
 
 	function renderTrackPreview(track, url) {
+		const previewSubjects = track.subjects && track.subjects.length ? track.subjects : getIntegratedTrackSubjects(track);
+
 		return `
 			<article class="content-card fade-in">
 				<span class="pill ${track.accent}">${track.title}</span>
 				<h3>${track.label}</h3>
 				<p>${track.summary}</p>
+				<div class="pill-row">${renderSubjectPills(previewSubjects, 4)}</div>
 				<div class="hero-actions">
 					<a class="btn btn-sm btn-light" href="${url}">Ouvrir</a>
 					<a class="btn btn-sm btn-outline-light" href="src/search.html?q=${encodeURIComponent(track.title)}">Rechercher</a>
@@ -944,15 +958,38 @@
 	}
 
 	function getTopicPool(route) {
-		if (route.track && Array.isArray(route.track.topics)) {
-			return route.track.topics.slice(0, 4);
+		if (route.section === 'classique' && route.track && Array.isArray(route.track.subjects)) {
+			return route.track.subjects.slice(0, 6);
 		}
 
 		if (route.section === 'integre') {
-			return ['Mathématiques', 'Physique', 'Informatique', 'Méthodologie'];
+			const branch = getBranch(route);
+			if (branch && Array.isArray(branch.subjects)) {
+				return branch.subjects.slice(0, 6);
+			}
+		}
+
+		if (route.track && Array.isArray(route.track.subjects)) {
+			return route.track.subjects.slice(0, 6);
 		}
 
 		return ['Notion 1', 'Notion 2', 'Notion 3', 'Notion 4'];
+	}
+
+	function getBranch(route) {
+		if (!route.track || !route.branch) {
+			return null;
+		}
+
+		return (route.track.branches || []).find((item) => item.code === route.branch) || null;
+	}
+
+	function getIntegratedTrackSubjects(track) {
+		return (track.branches || []).reduce((allSubjects, branch) => allSubjects.concat(branch.subjects || []), []);
+	}
+
+	function renderSubjectPills(subjects, limit = 99) {
+		return (subjects || []).slice(0, limit).map((subject) => `<span class="pill">${escapeHtml(subject)}</span>`).join('');
 	}
 
 	function primaryTag(tags) {
