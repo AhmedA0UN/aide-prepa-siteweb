@@ -764,7 +764,7 @@
 							<h2 class="section-title">Cours, TDs et examens</h2>
 						</div>
 					</div>
-					<div class="grid-3">${resourceCards}</div>
+					<!-- <div class="grid-3">${resourceCards}</div> -->
 				</section>
 
 				<section class="section-block fade-in delay-2">
@@ -831,11 +831,11 @@
 					<div class="section-head">
 						<div>
 							<p class="eyebrow">Ressources</p>
-							<h2 class="section-title">Les trois portes d’entrée</h2>
+							<h2 class="section-title">Les trois portes d’entrée cours, TDs et examens</h2>
 						</div>
 						<p class="section-lead">Le même parcours pour toutes les années, avec un contenu qui s’adapte à la filière.</p>
 					</div>
-					<div class="grid-3">${resourceCards}</div>
+					<!-- <div class="grid-3">${resourceCards}</div> -->
 				</section>
 
 				<section class="section-block fade-in delay-2">
