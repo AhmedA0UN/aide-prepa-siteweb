@@ -213,9 +213,22 @@ a:hover {
 	border-color: rgba(217, 119, 6, 0.26);
 }
 
-.section-block {
+..section-block {
 	display: grid;
 	gap: 1rem;
+}
+
+.contact-section {
+	margin-top: 1.5rem;
+	padding-bottom: 0.75rem;
+}
+
+.contact-info-panel {
+	margin-top: 1.15rem;
+}
+
+.contact-info-panel .panel {
+	padding: 1.25rem;
 }
 
 .section-head {

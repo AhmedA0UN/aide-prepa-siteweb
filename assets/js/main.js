@@ -208,8 +208,9 @@
 	function shellHeader(active) {
 		const navItems = [
 			{ label: 'Accueil', href: 'src/index.html', key: 'home' },
-			{ label: 'Filières', href: 'src/filiere.html', key: 'filiere' },
-			{ label: 'Recherche', href: 'src/search.html', key: 'search' }
+			//{ label: 'Filières', href: 'src/filiere.html', key: 'filiere' },
+			{ label: 'Recherche', href: 'src/search.html', key: 'search' },
+			{ label: 'Contact & info', href: 'src/contact.html', key: 'contact' }
 		];
 
 		return `
@@ -242,7 +243,7 @@
 
 	document.addEventListener('DOMContentLoaded', () => {
 		const route = getRoute();
-		const active = route.kind === 'home' ? 'home' : route.kind === 'search' ? 'search' : 'filiere';
+		const active = route.kind === 'home' ? 'home' : route.kind === 'search' ? 'search' : route.kind === 'contact' ? 'contact' : 'filiere';
 		const header = document.getElementById('site-header');
 		const main = document.getElementById('site-main');
 		const footer = document.getElementById('site-footer');
@@ -332,6 +333,10 @@
 			if (file === 'search.html') {
 				return { kind: 'search', path, searchParams };
 			}
+
+			if (file === 'contact.html') {
+				return { kind: 'contact', path, searchParams };
+			}
 		}
 
 		if (segments[0] === 'src' && segments[1] === 'classique') {
@@ -395,6 +400,8 @@
 				return 'Aide Prépa | Filières';
 			case 'search':
 				return 'Aide Prépa | Recherche';
+			case 'contact':
+				return 'Aide Prépa | Contact & info';
 			case 'track':
 				return `Aide Prépa | ${route.track ? route.track.title : 'Parcours'}`;
 			case 'branch':
@@ -416,6 +423,8 @@
 				return renderFiliere(route.searchParams);
 			case 'search':
 				return renderSearch(route.searchParams);
+			case 'contact':
+				return renderContact();
 			case 'track':
 				return renderTrack(route);
 			case 'branch':
@@ -568,6 +577,87 @@
 						<p class="section-lead">Passez de la vue d’ensemble au détail sans changer de logique de navigation.</p>
 					</div>
 					<div class="grid-3">${cards}</div>
+				</section>
+			</div>
+		`;
+	}
+
+	function renderContact() {
+		return `
+			<div class="page-shell">
+				<section class="page-hero fade-in">
+					<p class="eyebrow">Contact & info</p>
+					<h1>Un point d’entrée clair pour suivre la progression.</h1>
+					<p class="hero-lead">Aide Prépa a été pensé comme un guide de révision simple : choisissez un parcours, ouvrez le niveau voulu puis avancez de façon logique entre cours, TDs et examens.</p>
+					<div class="hero-actions">
+						<a class="btn btn-light btn-lg" href="src/index.html">Retour à l’accueil</a>
+						<a class="btn btn-outline-light btn-lg" href="src/filiere.html">Découvrir les filières</a>
+					</div>
+				</section>
+
+				<section class="section-block fade-in delay-1 contact-section">
+					<div class="section-head">
+						<div>
+							<p class="eyebrow">À propos</p>
+							<h2 class="section-title">Informations sur le site</h2>
+						</div>
+					</div>
+					<div class="grid-3">
+						<article class="content-card">
+							<h3>Parcours organisés</h3>
+							<p>La plateforme propose une structure claire pour la prépa classique et la prépa intégrée, avec des pages dédiées à chaque filière, année ou branche.</p>
+						</article>
+						<article class="content-card">
+							<h3>Ressources guidées</h3>
+							<p>Les contenus sont classés par usage : cours pour réviser, TDs pour s’entraîner et examens pour se tester dans des conditions réalistes.</p>
+						</article>
+						<article class="content-card">
+							<h3>Recherche rapide</h3>
+							<p>Le moteur de recherche permet d’atteindre rapidement un parcours, une branche ou un type de ressource à partir d’un mot-clé.</p>
+						</article>
+					</div>
+					<div class="contact-info-panel">
+						<div class="panel">
+							<h3 class="display-title">Pourquoi ce site existe</h3>
+							<p>Aide Prépa a été conçu pour réduire la dispersion pendant la préparation. L’idée est simple : centraliser les repères de travail, proposer une progression cohérente et garder la navigation intuitive, même quand le volume de matière augmente.</p>
+							<p>Le site est encore en évolution, avec l’objectif d’ajouter progressivement plus de contenus, plus de fiches et de nouvelles pages pour chaque filière.</p>
+							<p><strong>Contact :</strong> aide.prepa@outlook.com</p>
+						</div>
+					</div>
+					<div class="contact-info-panel">
+						<div class="panel">
+							<h3 class="display-title">À qui s’adresse ce site</h3>
+							<p>Il est destiné aux étudiants en prépa classique et intégrée qui veulent retrouver rapidement les bonnes ressources, suivre un plan de travail et progresser sans perdre de temps.</p>
+							<p>Il peut aussi servir de base de révision pour les élèves qui souhaitent organiser leurs cours, TDs et examens de manière plus claire.</p>
+						</div>
+					</div>
+				</section>
+
+				<section class="section-block fade-in delay-2">
+					<div class="section-head">
+						<div>
+							<p class="eyebrow">Informations utiles</p>
+							<h2 class="section-title">Conseils de navigation</h2>
+						</div>
+					</div>
+					<div class="grid-4">
+						<div class="panel">
+							<h3 class="display-title">1. Choisir</h3>
+							<p>Commencez par la filière adaptée à votre profil : classique ou intégrée.</p>
+						</div>
+						<div class="panel">
+							<h3 class="display-title">2. Structurer</h3>
+							<p>Ouvrez ensuite l’année ou la branche concernée pour voir l’organisation générale.</p>
+						</div>
+						<div class="panel">
+							<h3 class="display-title">3. Réviser</h3>
+							<p>Enchaînez les cours, les TDs et les examens dans cet ordre pour progresser efficacement.</p>
+						</div>
+						<div class="panel">
+							<h3 class="display-title">4. Rechercher</h3>
+							<p>Si vous savez déjà ce que vous cherchez, la barre de recherche vous y conduit directement.</p>
+						</div>
+					</div>
 				</section>
 			</div>
 		`;
