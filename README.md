@@ -1,6 +1,6 @@
 # Aide Prépa
 
-Site statique de préparation organisé par filière, année et type de ressource. Il propose une navigation claire pour la prépa classique et la prépa intégrée, avec des pages dédiées aux parcours, aux ressources et à la recherche.
+Site Web de préparation organisé par filière, année et type de ressource. Il propose une navigation claire pour la prépa classique et la prépa intégrée, avec des pages dédiées aux parcours, aux ressources et à la recherche.
 
 ## Structure du projet
 
@@ -31,6 +31,39 @@ Le site repose sur une structure HTML statique et un rendu côté client via Jav
 Aide Prépa est une plateforme de révision conçue pour aider les étudiants à mieux organiser leur préparation. Elle propose une structure simple et guidée pour retrouver rapidement les ressources utiles, suivre un parcours de travail clair et progresser de façon plus efficace.
 
 Le site s’adresse principalement aux étudiants en prépa classique et prépa intégrée qui souhaitent centraliser leurs cours, TDs et examens dans un espace unique et facile à parcourir.
+
+## Objectif pédagogique
+
+L’objectif de la plateforme est de proposer un accompagnement structuré pour la préparation. Elle aide à passer d’une logique de dispersion à une logique de progression, en favorisant :
+
+- une lecture claire des parcours disponibles
+- un accès rapide aux ressources adaptées à chaque niveau
+- une méthode de révision simple, progressive et régulière
+- une meilleure organisation du travail entre cours, exercices et examens
+
+## Comment utiliser le site
+
+1. Choisir la filière adaptée à son profil.
+2. Ouvrir le parcours ou la branche correspondant à son niveau.
+3. Accéder aux ressources de cours, TDs ou examens selon l’objectif du moment.
+4. Utiliser la recherche pour retrouver rapidement une page ou une matière précise.
+
+## Méthodes et conseils pédagogiques
+
+Quelques approches simples peuvent améliorer l’efficacité de la préparation et aider à mieux étudier :
+
+- Réviser une notion courte avant de passer à la suivante pour éviter la surcharge mentale.
+- Alternancer travail théorique et exercices pour mieux fixer les concepts.
+- Faire des fiches de synthèse après chaque séance de révision.
+- Revenir régulièrement sur les erreurs commises pour progresser plus rapidement.
+- Pratiquer avec des sujets d’examen dans des conditions proches de l’épreuve réelle.
+- Gérer son temps en séparant les séances de révision, d’entraînement et de correction.
+- Étudier par blocs courts et réguliers plutôt que par sessions trop longues et dispersées.
+- Expliquer à voix haute une notion à soi-même ou à quelqu’un d’autre pour vérifier sa compréhension.
+- Revoir les points importants chaque semaine pour renforcer la mémorisation à long terme.
+- Travailler dans un environnement calme et sans distractions pour mieux concentrer son attention.
+
+Ces méthodes visent à rendre l’apprentissage plus progressif, plus clair et plus durable.
 
 ## Parcours disponibles
 
