@@ -2,16 +2,6 @@
 
 Site Web de préparation organisé par filière, année et type de ressource. Il propose une navigation claire pour la prépa classique et la prépa intégrée, avec des pages dédiées aux parcours, aux ressources et à la recherche.
 
-## Structure du projet
-
-- `src/index.html` : page d’accueil du site
-- `src/filiere.html` : page de choix des filières
-- `src/search.html` : moteur de recherche interne
-- `src/contact.html` : page d’informations et de contact
-- `src/classique/` : parcours BG, MP, PC et PT
-- `src/integre/` : cycles CPI1 et CPI2
-- `assets/css/style.css` : styles, mise en page et identité visuelle
-- `assets/js/main.js` : rendu dynamique des pages, navigation et recherche
 
 ## Fonctionnement
 
@@ -102,6 +92,18 @@ Les prochaines étapes prévues incluent :
 - développer des pages plus détaillées par matière
 - améliorer la recherche et la navigation mobile
 - ajouter davantage d’éléments interactifs si nécessaire
+
+## Structure du projet
+
+- `src/index.html` : page d’accueil du site
+- `src/filiere.html` : page de choix des filières
+- `src/search.html` : moteur de recherche interne
+- `src/contact.html` : page d’informations et de contact
+- `src/classique/` : parcours BG, MP, PC et PT
+- `src/integre/` : cycles CPI1 et CPI2
+- `assets/css/style.css` : styles, mise en page et identité visuelle
+- `assets/js/main.js` : rendu dynamique des pages, navigation et recherche
+
 
 ## Contribution
 
