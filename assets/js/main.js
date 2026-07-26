@@ -709,14 +709,14 @@
 
 				<section class="section-block fade-in delay-2">
 					<div class="section-head">
-						<div>
+						<!-- <div>
 							<p class="eyebrow">Matières</p>
 							<h2 class="section-title">${track.code === 'bg' ? 'En cours de construction' : 'Programme du parcours'}</h2>
-						</div>
+						</div> -->
 					</div>
-					<div class="topic-grid">
+					<!-- <div class="topic-grid">
 						${subjectCards}
-					</div>
+					</div> -->
 				</section>
 			</div>
 		`;
@@ -735,9 +735,7 @@
 				<p>${branch.label}</p>
 				<p>${branch.summary}</p>
 				<div class="hero-actions">
-					${track.code === 'cpi2'
-						? `<a class="btn btn-sm btn-light" href="src/integre/${track.code}/${branch.code}/index.html">Ouvrir la branche</a>`
-						: `<a class="btn btn-sm btn-light" href="src/integre/${track.code}/${branch.code}/cours.html">Cours</a>`}
+						<a class="btn btn-sm btn-light" href="src/integre/${track.code}/${branch.code}/index.html">Ouvrir la branche</a>
 					<a class="btn btn-sm btn-outline-light" href="src/integre/${track.code}/${branch.code}/cours.html">Cours</a>
 					<a class="btn btn-sm btn-outline-light" href="src/integre/${track.code}/${branch.code}/tds.html">TDs</a>
 				</div>
@@ -765,7 +763,7 @@
 						</div>
 						<p class="section-lead">Les ressources suivent la branche et le type de travail demandé.</p>
 					</div>
-					 <div class="grid-3">${branchCards}</div> 
+					<div class="route-grid">${branchCards}</div>
 				</section>
 
 				<section class="section-block fade-in delay-2">
@@ -773,11 +771,16 @@
 						<div>
 							<p class="eyebrow">Matières</p>
 							<h2 class="section-title">${track.code === 'cpi1' ? 'Programme de CPI1' : 'Programme commun avant spécialisation'}</h2>
+							<span>en cours de construction ...</span>
+							<p>Choisissez l'une des branches ci-dessus pour accéder aux ressources détaillées.</p>
 						</div>
+						
 					</div>
-					<div class="topic-grid">
-						${uniqueSubjects.map((topic) => renderTopicPanel(topic, `Matière proposée dans le cycle ${track.title}.`)).join('')}
-					</div>
+					<!-- <div class="topic-grid">
+						${uniqueSubjects.length
+							? uniqueSubjects.map((topic) => renderTopicPanel(topic, `Matière proposée dans le cycle ${track.title}.`)).join('')
+							: '<div class="panel"><h3 class="display-title">Aucune matière listée</h3><p>Le programme détaillé sera ajouté ici dès que les contenus seront publiés.</p></div>'}
+					</div> -->
 				</section>
 			</div>
 		`;
@@ -819,10 +822,10 @@
 				</section>
 				<section class="section-block fade-in delay-1">
 					<div class="section-head">
-						<div>
+						<!-- <div>
 							<p class="eyebrow">Ressources</p>
 							<h2 class="section-title">Cours, TDs et examens</h2>
-						</div>
+						</div>  -->
 					</div>
 					<!-- <div class="grid-3">${resourceCards}</div> -->
 				</section>
@@ -882,16 +885,16 @@
 					</div>
 				</section>
 
-				<section class="section-block fade-in delay-1">
+				<!-- <section class="section-block fade-in delay-1">
 					<div class="section-head">
 						<div>
 							<p class="eyebrow">Ressources</p>
 							<h2 class="section-title">Les trois portes d’entrée cours, TDs et examens</h2>
-						</div>
+						</div> 
 						<p class="section-lead">Le même parcours pour toutes les années, avec un contenu qui s’adapte à la filière.</p>
 					</div>
-					<!-- <div class="grid-3">${resourceCards}</div> -->
-				</section>
+					<div class="route-grid">${resourceCards}</div>
+				</section> -->
 
 				<section class="section-block fade-in delay-2">
 					<div class="section-head">
@@ -965,14 +968,16 @@
 						</div>
 						<p class="section-lead">La page reste courte mais donne la logique de travail à suivre.</p>
 					</div>
-					<div class="grid-3">
-						${topicPool.map((topic, index) => `
-							<article class="content-card">
-								<span class="pill ${index % 2 === 0 ? 'pill--accent' : 'pill--warm'}">${resource.title}</span>
-								<h3>${escapeHtml(topic)}</h3>
-								<p>${resourceKeySentence(resource.key, topic)}</p>
-							</article>
-						`).join('')}
+					<div class="grid-4">
+						${topicPool.length
+							? topicPool.map((topic, index) => `
+								<article class="content-card">
+									<span class="pill ${index % 2 === 0 ? 'pill--accent' : 'pill--warm'}">${resource.title}</span>
+									<h3>${escapeHtml(topic)}</h3>
+									<p>${resourceKeySentence(resource.key, topic)}</p>
+								</article>
+							`).join('')
+							: '<div class="panel"><h3 class="display-title">Aucun repère disponible</h3><p>Cette ressource n’a pas encore de chapitres détaillés.</p></div>'}
 					</div>
 				</section>
 
