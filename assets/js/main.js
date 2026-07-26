@@ -765,7 +765,7 @@
 						</div>
 						<p class="section-lead">Les ressources suivent la branche et le type de travail demandé.</p>
 					</div>
-					<!-- <div class="grid-3">${branchCards}</div> -->
+					 <div class="grid-3">${branchCards}</div> 
 				</section>
 
 				<section class="section-block fade-in delay-2">
